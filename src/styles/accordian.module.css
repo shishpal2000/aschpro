@@ -1,0 +1,48 @@
+
+  .accordionHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 8px 15px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    margin: 1rem;
+    align-items: baseline;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .accordionHeader:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .accordionContent {
+    padding-top :1rem;
+    margin: 1.44rem;
+
+
+  }
+  .accordionHeading {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: left;
+    
+  }
+  .openHeading{
+    color: #005352;
+    
+  }
+  .closedHeading{
+    color:#000;
+  }
+
+  @media screen and (max-width: 480px) {
+    .accordionHeading{
+      letter-spacing: 0;
+    }
+  }
+  
+  

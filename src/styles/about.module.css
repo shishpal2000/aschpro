@@ -1,0 +1,541 @@
+/*------------------------ABOUT SECTION START------------------------*/
+.aboutWrapper {
+  /* width: 100%;
+  min-height: 50vh; */
+  /* background-image: url("../../public/images/Section2.jpg"); */
+  background-color: #264653;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.about_wrapper {
+  width: 100%;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+
+.marginTop {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.aboutpp {
+  padding-top: 14rem;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16.9px;
+  letter-spacing: 1.6px;
+  color: rgba(233, 196, 106, 1);
+}
+
+.abouthhh {
+  /* padding-top: 4rem; */
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 60.9px;
+  letter-spacing: 1.6px;
+  color: #fff;
+  padding-bottom: 5rem;
+  width: 60%;
+}
+
+.neworangetext {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 15.62px;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  color: #eba700;
+}
+
+.aboutheading {
+  color: #005352;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  padding-top: 0.5rem;
+}
+
+.abotpara11 {
+  font-size: 16.64px;
+  font-weight: 400;
+  line-height: 23.57px;
+  margin-top: 1rem;
+  color: rgba(127, 127, 127, 1);
+}
+.about_btn {
+  font-size: 2rem;
+  font-weight: 500;
+  font-size: 14.2px;
+  line-height: 19px;
+  margin-top: 1.597rem;
+}
+
+.px_1 {
+  padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+/*------------------------ABOUT SECTION START EXIT------------------------*/
+/*------------------------ABOUT_US SECTION START EXIT------------------------*/
+
+/*------------------------ABOUT_US SECTION  EXIT------------------------*/
+/*-----------------COUNTER SECTION START--------------*/
+.Counter_wrapper {
+  background-color: rgba(249, 249, 249, 1);
+}
+.count_h {
+  padding-top: 4rem;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+  color: rgba(42, 157, 143, 1);
+}
+.count_p {
+  padding-top: 0.777rem;
+  padding-bottom: 4rem;
+  font-size: 16px;
+  font-weight: 400px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: rgba(133, 140, 149, 1);
+}
+
+/*-----------------COUNTER SECTION EXIT--------------*/
+/*-----------------Mission And Vision SECTION START--------------*/
+.mission_wrapper {
+  background-color: #fff;
+  padding-bottom: 5rem;
+}
+.missionP {
+  padding-top: 5rem;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 6%;
+  color: #eba700;
+  text-align: center;
+}
+.missionh {
+  padding-bottom: 2rem;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: 20%;
+  color: #005352;
+}
+.mission_wrapper img {
+  width: 400px;
+  height: 324px;
+}
+.h441 {
+  margin-top: 1rem;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 5%;
+  color: rgba(20, 17, 15, 1);
+}
+.missionpp1 {
+  letter-spacing: 0.67px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 23px;
+  margin-right: 0.4rem;
+  color: #6e6e6e;
+}
+.h44 {
+  margin-top: 1rem;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 5%;
+  color: rgba(20, 17, 15, 1);
+}
+.missionpp {
+  letter-spacing: 0.67px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-right: 0.4rem;
+  color: #6e6e6e;
+}
+.visionpp {
+  padding-top: 2rem;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 8%;
+  color: rgba(126, 127, 131, 1);
+}
+
+/* about */
+.imageParentDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.blogImg {
+  width: 90%;
+  height: 100%;
+}
+
+.px_1 {
+  padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+/*-----------------Mission And Vision SECTION EXIT--------------*/
+
+@media (max-width: 920px) {
+  .aboutpp {
+    padding-top: 14rem;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16.9px;
+    letter-spacing: 1.1px;
+    color: rgba(233, 196, 106, 1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aboutpp {
+    padding-top: 15rem;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16.9px;
+    letter-spacing: 1.1px;
+    color: rgba(233, 196, 106, 1);
+  }
+
+  .abouthhh {
+    padding-top: 1rem;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -2%;
+    color: #fff;
+    padding-bottom: 6rem;
+  }
+
+  .neworangetext {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 13px;
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    color: #eba700;
+  }
+  .aboutheading {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 40.07px;
+  }
+
+  .missionP {
+    padding-top: 2rem;
+  }
+
+  .missionh {
+    padding-bottom: 1rem;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 20%;
+    color: rgba(20, 17, 15, 1);
+  }
+
+  .h441 {
+    margin-top: 0rem;
+  }
+
+  .mission_wrapper {
+    padding-bottom: 0rem;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .count_h {
+    padding-top: 2rem;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: -1.5px;
+    color: rgba(42, 157, 143, 1);
+  }
+
+  .count_p {
+    padding-bottom: 0rem;
+  }
+
+  .px_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero_section_img {
+    min-height: 90vh;
+  }
+
+  .abouthhh{
+    width: 100%;
+  }
+
+  .head_title{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 720px) {
+  .aboutWrapper {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .px_1 {
+    padding-right: 0rem !important;
+    padding-left: 0.25rem !important;
+  }
+
+  .aboutpp {
+    padding-top: 8rem;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16.9px;
+    letter-spacing: 1.1px;
+    color: rgba(233, 196, 106, 1);
+  }
+
+  .abouthhh {
+    padding-top: 1rem;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -2%;
+    color: #fff;
+    padding-bottom: 6rem;
+  }
+
+  .neworangetext {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 10px;
+    margin-top: 3rem;
+    letter-spacing: 1px;
+    color: #eba700;
+  }
+
+  .aboutheading {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+
+  .marginTop {
+    padding-top: 3rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .missionP {
+    padding-top: 2rem;
+    font-size: 16px;
+  }
+
+  .missionh {
+    padding-bottom: 1rem;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 20%;
+    color: rgba(20, 17, 15, 1);
+  }
+
+  /* about */
+  .imageParentDiv {
+    width: 100%;
+    height: 100%;
+  }
+
+  .blogImg {
+    width: 100%;
+    height: auto;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+  }
+
+  /* counter */
+  .count_h {
+    padding-top: 2rem;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -1.5px;
+    color: rgba(42, 157, 143, 1);
+    text-align: center;
+  }
+
+  .count_p {
+    text-align: center;
+    padding-top: 0.777rem;
+    padding-bottom: 2rem;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: rgba(133, 140, 149, 1);
+  }
+
+  .missionP {
+    font-size: 14px;
+    font: Noto Sans;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 6%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .aboutWrapper {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .px_1 {
+    padding-right: 0rem !important;
+    padding-left: 0.25rem !important;
+  }
+
+  .abotpara11{
+    text-align: justify;
+  }
+
+  .aboutpp {
+    padding-top: 8rem;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16.9px;
+    letter-spacing: 1.1px;
+    color: rgba(233, 196, 106, 1);
+  }
+
+  .abouthhh {
+    padding-top: 1rem;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -2%;
+    color: #fff;
+    padding-bottom: 6rem;
+    width: 100%;
+  }
+
+  .neworangetext {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 10px;
+    margin-top: 3rem;
+    letter-spacing: 1px;
+    color: #eba700;
+  }
+
+  .aboutheading {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: justify;
+  }
+
+  .marginTop {
+    padding-top: 3rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .missionP {
+    padding-top: 2rem;
+    font-size: 16px;
+  }
+
+  .missionh {
+    padding-bottom: 1rem;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 40px;
+    letter-spacing: 20%;
+    color: rgba(20, 17, 15, 1);
+  }
+
+  /* about */
+  .imageParentDiv {
+    width: 100%;
+    height: 100%;
+  }
+
+  .blogImg {
+    width: 100%;
+    height: auto;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+  }
+
+  /* counter */
+  .count_h {
+    padding-top: 2rem;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -1.5px;
+    color: rgba(42, 157, 143, 1);
+    text-align: center;
+  }
+
+  .count_p {
+    text-align: center;
+    padding-top: 0.777rem;
+    padding-bottom: 2rem;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: rgba(133, 140, 149, 1);
+  }
+
+  .missionP {
+    font-size: 16px;
+    font: Noto Sans;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    letter-spacing: 6%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .missionpp1{
+    text-align: justify;
+  }
+  .missionpp{
+    text-align: justify;
+  }
+}

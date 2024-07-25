@@ -1,0 +1,143 @@
+.footer {
+  width: 100%;
+  background-color: rgba(38, 70, 83, 1);
+  padding: 20px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #fff;
+}
+.fsweight7 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 20.9px;
+  padding-top: 4rem;
+  color: rgba(255, 255, 255, 0.83);
+}
+.yellowText {
+  color:#E9C46A;
+  font-size: 10px;
+  font-weight: 400;
+  padding-top: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer .p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 25.5px;
+  padding-left: 8px;
+  color: rgba(255, 255, 255, 0.83);
+}
+.fsweight700 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 1);
+}
+.fsweight71 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-left: 1rem;
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 1);
+}
+.fsweight70 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 1);
+}
+.list {
+  list-style-type: none;
+  padding-left: 0rem !important;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-top: 1.666rem;
+  color: rgba(255, 255, 255, 0.83);
+}
+.list li {
+  font-size: 17px;
+}
+
+.list li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 17px;
+}
+
+.height_width25 {
+  width: 25px;
+  height: 25px;
+  margin-left: 0.754rem;
+}
+.pdCustomOne {
+  padding-top: 2rem;
+}
+.borderTop {
+  border-top: 1px solid #ccc;
+}
+
+.social_icon {
+  margin-right: 20px;
+  height: 18px;
+  width: 18px;
+}
+.listItem {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease, color 0.3s ease-in-out;
+}
+
+.listItem:hover {
+  transform: translateX(20px); 
+ scale: 1.1;
+}
+
+.widthValue{
+  width: 80%;
+}
+
+.marginRight {
+  margin-right: 1.2rem !important;
+  margin-left: 0.5rem !important;
+}
+
+
+@media screen and (max-width: 480px) {
+  
+  .fsweight700 {
+    margin-top: 1rem;
+  }
+
+  .fsweight71 {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  .fsweight70{
+    margin-left: 0;
+  }
+
+  .list {
+    margin-top: -0.3rem;
+    font-size: 15px;
+  }
+  .list li {
+    font-size: 15px;
+  }
+
+  .list li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 15px;
+  }
+
+  .footer .p{
+    padding-left: 0;
+  }
+}
