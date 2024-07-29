@@ -6,7 +6,7 @@ const AboutSection = () => {
     <div className={styles.aboutWrapper}>
       <div className="container ">
         <p className={styles.aboutpp}>About Aschpro</p>
-        <h2 className={styles.abouthhh} style={{textTransform:'capitalize'}}>Empowering businesses personalized recruitment solutions</h2>
+        <h1 className={styles.abouthhh} style={{textTransform:'capitalize'}}>Empowering businesses personalized recruitment solutions</h1>
       </div>
     </div>
   )

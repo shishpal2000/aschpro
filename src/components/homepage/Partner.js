@@ -85,7 +85,7 @@ const Partner = () => {
           >
             <p className={styles.heading1}>EMPLOYER BENEFITS</p>
             {phone ? (
-              <h6 className={styles.main_heading}>Why Partner with aschpro?</h6>
+              <h3 className={styles.main_heading}>Why Partner with aschpro?</h3>
             ) : (
               <h6 className={styles.main_heading}>
                 Why Partner with <br /> aschpro?
@@ -93,9 +93,9 @@ const Partner = () => {
             )}
 
             <motion.div variants={boxVariants} className={styles.benefit_card1}>
-              <h5 className={styles.heading_1}>
+              <h3 className={styles.heading_1}>
                 Tailored Recruitment Solutions
-              </h5>
+              </h3>
               {phone ? (
                 <p className={styles.para_1}>
                   Customizing hiring services to meet your needs
@@ -107,9 +107,9 @@ const Partner = () => {
               )}
             </motion.div>
             <motion.div variants={boxVariants} className={styles.benefit_card2}>
-              <h5 className={styles.heading_1}>
+              <h3 className={styles.heading_1}>
                 Comprehensive Candidate Vetting
-              </h5>
+              </h3>
               {phone ? (
                 <p className={styles.para_1}>
                   Doing thorough evaluation of the candidates
@@ -140,23 +140,23 @@ const Partner = () => {
             variants={rightSectionVariants}
           >
             <motion.div variants={boxVariants} className={styles.benefit_card3}>
-              <h6 className={styles.heading_1}>
+              <h3 className={styles.heading_1}>
                 Access to a Diverse Talent Pool
-              </h6>
+              </h3>
               <p className={styles.para_1}>
                 Broad range of qualified and diversified candidates
               </p>
             </motion.div>
             <motion.div variants={boxVariants} className={styles.benefit_card4}>
-              <h6 className={styles.heading_1}>
+              <h3 className={styles.heading_1}>
                 Dedicated Support and Partnership
-              </h6>
+              </h3>
               <p className={styles.para_1}>
                 Committing proper assistance and collaboration
               </p>
             </motion.div>
             <motion.div variants={boxVariants} className={styles.benefit_card5}>
-              <h6 className={styles.heading_1}>Benefit from Confidentiality</h6>
+              <h3 className={styles.heading_1}>Benefit from Confidentiality</h3>
               {phone ? (
                 <p className={styles.para_1}>
                   Ensure confidentiality amidst your job search.

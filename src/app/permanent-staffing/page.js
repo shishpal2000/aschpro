@@ -5,7 +5,7 @@ import Contract from "../../components/permanent_service/Contract"
 import Permanent from "../../components/permanent_service/Permanent"
 import Rpo from "../../components/permanent_service/Rpo"
 import Choose from "../../components/permanent_service/Choose"
-import Readmore from '@/components/permanent_service/Readmore';
+import Readmore from '../../components/permanent_service/Readmore';
 const page = () => {
   return (
     <div>

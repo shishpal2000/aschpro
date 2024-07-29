@@ -57,7 +57,7 @@ const Industry = () => {
         <div className="row">
           <p className={styles.pp1}>industry</p>
           {
-            phone ? <h4 className={styles.h4}>Aschpro Enables Inspired Learning Across Industries </h4> : <h4 className={styles.h4}>Aschpro Enables Inspired Learning Across Industries </h4>
+            phone ? <h2 className={styles.h4}>Aschpro Enables Inspired Learning Across Industries </h2> : <h2 className={styles.h4}>Aschpro Enables Inspired Learning Across Industries </h2>
           }
           {industries.map((industry, index) => (
             <motion.div
@@ -69,7 +69,7 @@ const Industry = () => {
               
                 <Image src={industry.icon} alt={industry.name} width={50} height={50} 
            />
-                <h6>{industry.name}</h6>
+                <h3 >{industry.name}</h3>
               </div>
             </motion.div>
           ))}

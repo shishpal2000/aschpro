@@ -69,7 +69,7 @@ const Choose = () => {
               {cardData.map((card, index) => {
                 return (
                   <div key={index} className={homeStyle.cartTop}>
-                    <p className={homeStyle.contentType}>{card.title}</p>
+                    <h3 className={homeStyle.contentType}>{card.title}</h3>
                     <p className={homeStyle.contentTypeChild}>
                       {card.shortdesc}
                     </p>

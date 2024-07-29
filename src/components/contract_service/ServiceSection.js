@@ -6,7 +6,7 @@ const ServiceSection = () => {
     <div className={styles.careerWrapper}>
     <div className="container">
       <p className={styles.carryp1}>Contract Staffing</p>
-      <h2 className={`${styles.carryh1} col-lg-6`} style={{textTransform:'capitalize'}}>End-to-End Recruitment Solutions</h2>
+      <h1 className={`${styles.carryh1} col-lg-6`} style={{textTransform:'capitalize'}}>End-to-End Recruitment Solutions</h1>
     </div>
   </div>
   )

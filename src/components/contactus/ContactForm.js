@@ -141,7 +141,7 @@ const ContactForm = () => {
 
         <div className={`col-lg-4 ${stylescon.mt_4} ${stylescon.mb_4}`}>
           <div className={stylescon.conta}>
-            <h5 className={stylescon.contah5}>Get in touch</h5>
+            <h2 className={stylescon.contah5}>Get in touch</h2>
             <p>
               We&apos;d love to hear it from you! Whether it&apos;s a query
               regarding executive search, or need guidance on hiring the right
@@ -149,12 +149,12 @@ const ContactForm = () => {
             </p>
           </div>
           <div className={stylescon.conta}>
-            <h5 className={`py-2 ${stylescon.contah5}`}>Address</h5>
+            <h2 className={`py-2 ${stylescon.contah5}`}>Address</h2>
             <p style={{ margin: 0 }}>Plot No 83, Sainath colony, Panama Godowns,</p>
             <p style={{ margin: 0 }}>Vanasthalipuram, Hyderabad 500 070</p>
           </div>
           <div className={stylescon.conta}>
-            <h5 className={`py-2 ${stylescon.contah5}`}>Email</h5>
+            <h2 className={`py-2 ${stylescon.contah5}`}>Email</h2>
             <p style={{ margin: 0 }}>info@aschpro.com</p>
           </div>
         </div>

@@ -114,25 +114,25 @@ const Contract = () => {
         <div className={style.greyBox}>
           <div className="row">
             <div className="col-lg-3">
-              <h4 className={style.ContractHeading}>Flexibility</h4>
+              <h3 className={style.ContractHeading}>Flexibility</h3>
               <p className={style.ContractSubHeading}>
               Flexibility provides to scale your workforce quickly and cost-effectively for short-term needs.
               </p>
             </div>
             <div className="col-lg-3">
-              <h4 className={style.ContractHeading}>Cost Efficiency</h4>
+              <h3 className={style.ContractHeading}>Cost Efficiency</h3>
               <p className={style.ContractSubHeading}>
               Moreover, cost-efficient, reducing expenses on benefits and training for short-term hires.
               </p>
             </div>
             <div className="col-lg-3">
-              <h4 className={style.ContractHeading}>Skills & Speed</h4>
+              <h3 className={style.ContractHeading}>Skills & Speed</h3>
               <p className={style.ContractSubHeading}>
               Furthermore, skill and speed ensures skilled professionals and speedy hiring for immediate business needs.
               </p>
             </div>
             <div className="col-lg-3">
-              <h4 className={style.ContractHeading}>Risk Mitigation</h4>
+              <h3 className={style.ContractHeading}>Risk Mitigation</h3>
               <p className={style.ContractSubHeading}>
               Additionally, Risk mitigation offers flexible, temporary solutions without long-term commitments.
               </p>

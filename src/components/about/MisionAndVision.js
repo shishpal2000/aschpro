@@ -50,7 +50,7 @@ const MisionAndVision = () => {
           }
           
           <div className="col-lg-4">
-            <h4 className={stylesss.h441} style={{color: "#005352"}}>Our Mission</h4>
+            <h3 className={stylesss.h441} style={{color: "#005352"}}>Our Mission</h3>
             <p className={stylesss.missionpp1}>
               Our mission is to strive to be the leading recruitment agent that is interested in finding the best employees who deliver A-one performance.
             </p>
@@ -81,7 +81,7 @@ const MisionAndVision = () => {
             </Modal> */}
           </div>
           <div className="col-lg-4">
-            <h4 className={stylesss.h44} style={{color: "#005352"}}>Our Vision</h4>
+            <h3 className={stylesss.h44} style={{color: "#005352"}}>Our Vision</h3>
             <p className={stylesss.missionpp}>
               Our vision is to become the best recruiting company by maintaining a continuous commitment to quality and reliably supplying a superior workforce to various workplaces.
             </p>

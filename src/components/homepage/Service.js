@@ -100,7 +100,7 @@ const Service = () => {
                     
                   </div>
                   <div>
-                <h6>Practical Approach</h6>
+                <h3 className={styles.h3}>Practical Approach</h3>
                 <p className={styles.greyText222}>
                   Join a practical course on real-world application for success
                 </p>
@@ -117,7 +117,7 @@ const Service = () => {
                
                   </div>
                   <div>
-                <h6>Industry Insights</h6>
+                <h3 className={styles.h3}>Industry Insights</h3>
                 <p className={styles.greyText222}>
                   Stay ahead with strategic insights and navigate industry
                   shifts
@@ -135,7 +135,7 @@ const Service = () => {
                
                   </div>
                   <div>
-                <h6>Career Opportunities</h6>
+                <h3 className={styles.h3}>Career Opportunities</h3>
                 <p className={styles.greyText222}>
                   aschpro advanced programs lead to various rewarding career
                   paths

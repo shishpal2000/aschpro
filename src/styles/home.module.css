@@ -19,6 +19,14 @@
   color: #005352;
 }
 
+.h3{
+  margin-top: 0.777rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
 @keyframes shine {
   to {
     background-position: 100%;
@@ -357,7 +365,7 @@
   margin-top: -105px;
   color: #7f7f7f;
 }
-.services_section h6 {
+.services_section h3 {
   font-size: 16px;
   font-weight: 600;
   line-height: 26px;
@@ -504,7 +512,7 @@
 .services_box1 {
   padding-left: 2rem;
 }
-.services_box1 h6 {
+.services_box1 h3 {
   margin-top: 0.777rem;
   font-size: 18px;
   font-weight: 600;
@@ -688,7 +696,7 @@
   margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
-.icon_size h6 {
+.icon_size h3 {
   margin-top: 0;
   margin-left: 1rem;
   font-size: 17px;
@@ -1196,7 +1204,7 @@
   .h4 {
     font-size: 30px;
   }
-  .icon_size h6 {
+  .icon_size h3 {
     margin-top: 0px;
     margin-left: 1rem;
     font-size: 14px;
@@ -1852,7 +1860,7 @@
     padding: 10px 0px 10px 0px;
   }
   /* service */
-  .services_box1 h6 {
+  .services_box1 h3 {
     margin-top: 0.777rem;
     font-size: 18px;
     font-weight: 600;

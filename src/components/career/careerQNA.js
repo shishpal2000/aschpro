@@ -83,13 +83,13 @@ const Question = () => {
             <p className={styles.p}>Everything You Need To Know </p>
             {
               phone ? (
-                <h3 className={`mt-4 ${styles.mainHeading}`}>
+                <h2 className={`mt-4 ${styles.mainHeading}`}>
                 Any Query? Check Our FAQ First
-                </h3>
+                </h2>
               ) : (
-                <h3 className={`text-center mt-4 ${styles.mainHeading}`}>
+                <h2 className={`text-center mt-4 ${styles.mainHeading}`}>
                 Any Query? Check Our FAQ First
-                </h3>
+                </h2>
               )
             }
            

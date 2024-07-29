@@ -117,22 +117,22 @@ const Permanent = () => {
         <div className={style.greyBox2}>
         <div className="row">
             <div className="col-lg-3">
-                <h4 className={style.ContractHeading}>Excellence in management</h4>
+                <h3 className={style.ContractHeading}>Excellence in management</h3>
                 <p className={style.ContractSubHeading}>Aschpro directly makes strong connections with external executives to recruit efficient people with advertisements. </p>
             </div>
             <div className="col-lg-3">
-            <h4 className={style.ContractHeading}>Effective Service Strategies.</h4>
+            <h3 className={style.ContractHeading}>Effective Service Strategies.</h3>
             <p className={style.ContractSubHeading}>Advanced programs in career opportunities create practical and real-world experiences for candidates to get insights into the industry. 
             </p>
             </div>
             <div className="col-lg-3">
-            <h4 className={style.ContractHeading}>Delivering talent acquisition </h4>
+            <h3 className={style.ContractHeading}>Delivering talent acquisition </h3>
             <p className={style.ContractSubHeading}>Permanent staffing in Aschpro is possible with the screening, assessments, evaluation, verification and documentation processes for higher workforces. </p>
             </div>
             <div className="col-lg-3">
-            <h4 className={style.ContractHeading}>
+            <h3 className={style.ContractHeading}>
 Successful Service Approaches.
-</h4>
+</h3>
             <p className={style.ContractSubHeading}>Permanent recruitment solutions deploy with customised hiring to meet the need of candidates, diversification and confidentiality process for the job. 
             </p>
             </div>

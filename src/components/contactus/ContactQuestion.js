@@ -81,11 +81,11 @@ const Question = () => {
           <div className="col-lg-12">
             <p className={styles.p}>Learn More About Aschpro</p>
             {
-              phone ? <h3 className={`mt-4 ${styles.mainHeading}`}>
+              phone ? <h2 className={`mt-4 ${styles.mainHeading}`}>
             Get Answers to Your FAQs About Aschpro
-            </h3> :  <h3 className={`text-center mt-4 ${styles.mainHeading}`}>
+            </h2> :  <h2 className={`text-center mt-4 ${styles.mainHeading}`}>
             Get Answers to Your FAQs <br/> About Aschpro
-            </h3>
+            </h2>
             }
            
           </div>

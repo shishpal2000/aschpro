@@ -85,11 +85,11 @@ const Choose = () => {
               <p className={`${styles.blueText} ${styles.orangeText}`}>
                 POINTS
               </p>
-              <h1
+              <h2
                 className={`${styles.fsWeight700} ${homeStyle.heading_tag_about}`}
               >
                 Why Choose Us
-              </h1>
+              </h2>
               <p className={`${styles.customTextColor} ${homeStyle.greyText1}`}>
                 We uphold our ongoing support and communication throughout the
                 contract staffing period to guarantee smooth and productive
@@ -121,7 +121,7 @@ const Choose = () => {
               {cardData.map((card, index) => {
                 return (
                   <div key={index} className={homeStyle.cartTop}>
-                    <p className={homeStyle.contentType}>{card.title}</p>
+                    <h3 className={homeStyle.contentType}>{card.title}</h3>
                     <p className={homeStyle.contentTypeChild}>
                       {card.shortdesc}
                     </p>

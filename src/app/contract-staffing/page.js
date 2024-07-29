@@ -11,11 +11,10 @@ const page = () => {
     <div>
       <ServiceSection/>
       <Contract/>
-      
       <Choose/>
       <Readmore/>
     </div>
   )
 }
 
-export default page
+export default page;

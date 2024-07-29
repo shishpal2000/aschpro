@@ -194,6 +194,12 @@
 
 /*-----------------Mission And Vision SECTION EXIT--------------*/
 
+@media (max-width: 1200px) {
+  .neworangetext{
+    padding-top: 1.5rem;
+  }
+}
+
 @media (max-width: 920px) {
   .aboutpp {
     padding-top: 14rem;
@@ -203,6 +209,7 @@
     letter-spacing: 1.1px;
     color: rgba(233, 196, 106, 1);
   }
+  
 }
 
 @media screen and (max-width: 768px) {

@@ -11,9 +11,9 @@ const Readmore = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <h3 className={styles.main_heading}>
+            <h2 className={styles.main_heading}>
               More About Contact Staffing
-            </h3>
+            </h2>
 
             {readMore ? (
               <div className={styles.readMore_heading}>
@@ -26,7 +26,7 @@ const Readmore = () => {
                   graded as the top IT staffing companies.
                 </p>
 
-                <h2 className={styles.sub_heading}>Extensive Talent Network</h2>
+                <h3 className={styles.sub_heading}>Extensive Talent Network</h3>
 
                 <p className={styles.readMore_data}>
                   Furthermore, our large group of professionals such as IT
@@ -38,9 +38,9 @@ const Readmore = () => {
                   development partner for your job recruiting needs.
                 </p>
 
-                <h2 className={styles.sub_heading}>
+                <h3 className={styles.sub_heading}>
                   Proven Expertise and Experience
-                </h2>
+                </h3>
 
                 <p className={styles.readMore_data}>
                   Besides the many years of our office&apos;s experience in being the
@@ -52,7 +52,7 @@ const Readmore = () => {
                   the business&apos;s success.
                 </p>
 
-                <h2 className={styles.sub_heading}>Dedicated Client Support</h2>
+                <h3 className={styles.sub_heading}>Dedicated Client Support</h3>
 
                 <p className={styles.readMore_data}>
                   Other than the actual onboarding process, we give you proper
@@ -66,7 +66,7 @@ const Readmore = () => {
                   business.
                 </p>
 
-                <h2 className={styles.sub_heading}>Broad Industry Coverage</h2>
+                <h3 className={styles.sub_heading}>Broad Industry Coverage</h3>
 
                 <p className={styles.readMore_data}>
                   First and foremost, we cover all kinds of businesses such as
@@ -95,7 +95,7 @@ const Readmore = () => {
                   graded as the top IT staffing companies.
                 </p>
 
-                <h2 className={styles.sub_heading}>Extensive Talent Network</h2>
+                <h3 className={styles.sub_heading}>Extensive Talent Network</h3>
 
                 <p className={styles.readMore_data}>
                   Furthermore, our large group of professionals such as IT

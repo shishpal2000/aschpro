@@ -8,7 +8,7 @@ const Mainsection = () => {
     <div className="container ">
       <p className={styles.carryp1}>Your Next Hire is Just a Message Away - Contact Aschpro
       </p>
-      <h2 className={styles.carryh1} style={{textTransform:'capitalize'}}>Aschpro is your go-to platform for discovering top talent to drive your business growth</h2>
+      <h1 className={styles.carryh1} style={{textTransform:'capitalize'}}>Aschpro is your go-to platform for discovering top talent to drive your business growth</h1>
     </div>
   </div>
   )
