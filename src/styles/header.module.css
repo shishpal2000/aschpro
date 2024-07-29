@@ -87,6 +87,9 @@
   transition: color 0.3s;
   font-size: 16px;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -194,6 +197,12 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  height: 100%;
+}
+
+.listStyle a {
+  height: 100%;
+  align-items: center;
 }
 
 .dropdown_child {
@@ -215,13 +224,13 @@
   cursor: pointer;
 }
 
-.dropdown:hover .dropdown_child, .listStyle:hover .dropdown_child {
+.dropdown:hover .dropdown_child {
   display: block;
 }
 
-.marginTop {
-  margin-top: 1.5rem !important;
-}
+/* .marginTop {
+  margin-top: 0.1rem !important;
+} */
 
 @media (max-width: 767px) {
   .listStyle {
@@ -231,7 +240,7 @@
   }
 
   .marginTop {
-    margin-top: -3rem !important;
+    margin-top: -2.5rem !important;
   }
 
 

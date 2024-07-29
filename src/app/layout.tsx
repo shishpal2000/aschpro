@@ -158,7 +158,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <GoogleTagManager gtmId="G-R2Z2HL08W3" />
+        <GoogleTagManager gtmId="G-VXHFVR8RBX" />
       </head>
       <body className={inter.className}>
         <div>
