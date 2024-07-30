@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "../../styles/home.module.css";
-import Rectangle from "../../../public/images/Rectangle.png";
+import Rectangle from "../../../public/images/homePartner.png";
 
 const Partner = () => {
   const [phone, setPhone] = useState(false);
@@ -121,7 +121,7 @@ const Partner = () => {
               )}
             </motion.div>
           </motion.div>
-
+  
           <motion.div
             className={`col-lg-4 col-md-12 col-sm-12 ${styles.centeredImage}`}
             variants={imageVariants}

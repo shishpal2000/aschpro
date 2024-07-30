@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import styles from "../../styles/home.module.css";
 import style from "../../styles/services.module.css"
 import Image from "next/image";
-import permanent from "../../../public/images/permanent.png";
+import permanent from "../../../public/images/parmanentService.png";
 
 
 const Permanent = () => {

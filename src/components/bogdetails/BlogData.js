@@ -13,7 +13,7 @@ const BlogDetail = () => {
     if (pathName) {
       const slug = pathName.split("/").pop(); // Extract the slug from the pathname
 
-      fetch(`https://admin.aschpro.com/api/blog/${slug}`)
+      fetch(`https://aschpro.mediadynox.in/api/blog/${slug}`)
         .then(response => response.json())
         .then(data => setBlogData(data))
         .catch(error => console.error('Error fetching blog data:', error));
@@ -30,7 +30,7 @@ const BlogDetail = () => {
         <div className={`container ${styles.py_5}`}>
           <div className="row w-80">
           <div className={styles.middleBlogImage}>
-            <img src={`https://admin.aschpro.com/storage/${blogData.image}`} className={styles.middleBlogImage} alt={blogData.imgalt} />
+            <img src={`https://aschpro.mediadynox.in/uploads/${blogData.image}`} className={styles.middleBlogImage} alt={blogData.imgalt} />
             </div>
 
             <div className={styles.fontSize}>

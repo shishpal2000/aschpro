@@ -12,7 +12,7 @@ const JobSection = () => {
     if (pathName) {
       const slug = pathName.split("/").pop(); // Extract the slug from the pathname
 
-      fetch(`https://admin.aschpro.com/api/job/${slug}`)
+      fetch(`https://aschpro.mediadynox.in/api/job/${slug}`)
         .then(response => response.json())
         .then(data => setjobData(data))
         .catch(error => console.error('Error fetching Job data:', error));

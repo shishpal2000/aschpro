@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../styles/about.module.css';
 import aboutStyles from '../../styles/about.module.css';
 import Image from 'next/image';
-import about from '../../../public/images/about.png';
+import about from '../../../public/images/about1.png';
 import Button from '../../components/button';
 import { useRouter } from 'next/navigation';
 

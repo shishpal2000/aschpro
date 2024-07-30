@@ -64,7 +64,7 @@ const Service = () => {
         >
           <div className="col-lg-6 col-md-12 col-sm-12">
             <motion.img
-              src="images/Left.png"
+              src="images/homeService.png"
               alt=""
               className="img-fluid"
               variants={imageVariants}
