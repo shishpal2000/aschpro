@@ -35,7 +35,7 @@ const Careertable = () => {
     // Fetch data from the API
     const fetchData = async () => {
       try {
-        const response = await fetch("https://aschpro.mediadynox.in/api/job"); // Replace with your API endpoint
+        const response = await fetch("https://ad.aschpro.com/api/job"); // Replace with your API endpoint
         const data = await response.json();
         setJobData(data);
       } catch (error) {
