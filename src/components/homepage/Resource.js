@@ -29,7 +29,7 @@ const Card = ({ category_name, dateofpublish, title, shortdesc, image, imgalt , 
     >
       <div className={styles.positionRelative}>
         <div className={styles.tag}>{category_name}</div>
-        <img src={`https://aschpro.mediadynox.in/uploads/${image}`} alt={imgalt} className={styles.blogImg} />
+        <img src={`https://admin.aschpro.com/storage/${image}`} alt={imgalt} className={styles.blogImg} />
         <div className={styles.tagDate}>
         <p className={styles.textStyle1}>{formatDate(dateofpublish)}</p>
         </div>
@@ -57,7 +57,7 @@ const Resource = () => {
     // Function to fetch data from API
     const fetchData = async () => {
       try {
-        const response = await fetch('https://aschpro.mediadynox.in/api/homeblogs'); // Replace with your API endpoint
+        const response = await fetch('https://admin.aschpro.com/api/homeblogs'); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
