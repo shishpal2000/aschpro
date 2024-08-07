@@ -24,7 +24,7 @@ const CareerForm = () => {
     // Function to fetch form data based on slug
     const fetchFormData = async (slug) => {
       try {
-        const response = await fetch(`https://admin.aschpro.com/api/job/${slug}`);
+        const response = await fetch(`https://aschpro.mediadynox.in/api/job/${slug}`);
         const data = await response.json();
         setFormData({
           Jobid: data.job_id || "",

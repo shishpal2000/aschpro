@@ -12,7 +12,7 @@ const BlogSection = () => {
     if (pathName) {
       const slug = pathName.split("/").pop(); // Extract the slug from the pathname
 
-      fetch(`https://ad.aschpro.com/api/blog/${slug}`)
+      fetch(`https://aschpro.mediadynox.in/api/blog/${slug}`)
         .then(response => response.json())
         .then(data => setBlogData(data))
         .catch(error => console.error('Error fetching blog data:', error));

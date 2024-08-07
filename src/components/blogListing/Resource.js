@@ -13,7 +13,7 @@ const Resource = () => {
     // Function to fetch data from API
     const fetchData = async () => {
       try {
-        const response = await fetch('https://ad.aschpro.com/api/blogs'); // Replace with your API endpoint
+        const response = await fetch('https://aschpro.mediadynox.in/api/blogs'); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -38,7 +38,7 @@ const Resource = () => {
         <div className={styles.positionRelative}>
           <div className={styles.tag}>{category_name}</div>
           {/* Assuming blogImg is replaced with an actual image URL from API data */}
-          <img src={`https://ad.aschpro.com/storage/${image}`} alt={imgalt} className={styles.blogImg} width={300} height={200} />
+          <img src={`https://aschpro.mediadynox.in/uploads/${image}`} alt={imgalt} className={styles.blogImg} width={300} height={200} />
           <div className={styles.tagDate}>
             <p className={styles.textStyle1}>{formatDate(dateofpublish)}</p>
           </div>
