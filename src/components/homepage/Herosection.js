@@ -160,7 +160,7 @@ const Herosection = () => {
                     <h6>Direct Hire</h6>
                     <p>
                       Easily connecting you to the top talent your business
-                      required
+                      requires.
                     </p>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ const Herosection = () => {
                     <h6>Contract Staffing</h6>
                     <p>
                       We provide versatile staffing solutions as per business
-                      requirement
+                      requirements.
                     </p>
                   </div>
                 </div>

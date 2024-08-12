@@ -1,8 +1,8 @@
 "use client";
-import React, { useState ,useEffect} from "react";
-import Image from 'next/image';
-import VideoImage from '../../../public/images/Video1.png';
-import Modal from 'react-modal';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import VideoImage from "../../../public/images/Video1.png";
+import Modal from "react-modal";
 import stylesss from "../../styles/about.module.css";
 import style from "../../styles/missiontime.module.css";
 
@@ -21,7 +21,7 @@ const MisionAndVision = () => {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); 
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -40,22 +40,34 @@ const MisionAndVision = () => {
     <div className={stylesss.mission_wrapper}>
       <div className="container">
         <div className="row">
-          <p className={`${stylesss.missionP}`} style={{textTransform:'capitalize'}}> MISSION & VISION</p>
-          {
-            phone ? <h2 className={stylesss.missionh}>
-            Get Unparalleled Access to Top-Qualified Candidates
-          </h2>: <h2 className={stylesss.missionh}>
-            Get Unparalleled Access to <br/> Top-Qualified Candidates
-          </h2>
-          }
-          
+          <p
+            className={`${stylesss.missionP}`}
+            style={{ textTransform: "capitalize" }}
+          >
+            {" "}MISSION & VISION
+          </p>
+          {phone
+            ? <h2 className={stylesss.missionh}>
+                Get Unparalleled Access to Top-Qualified Candidates
+              </h2>
+            : <h2 className={stylesss.missionh}>
+                Get Unparalleled Access to <br /> Top-Qualified Candidates
+              </h2>}
+
           <div className="col-lg-4">
-            <h3 className={stylesss.h441} style={{color: "#005352"}}>Our Mission</h3>
+            <h3 className={stylesss.h441} style={{ color: "#005352" }}>
+              Our Mission
+            </h3>
             <p className={stylesss.missionpp1}>
-              Our mission is to strive to be the leading recruitment agent that is interested in finding the best employees who deliver A-one performance.
+              Our mission is to strive to be the leading recruitment agent that
+              is interested in finding the best employees who deliver A-one
+              performance.
             </p>
             <p className={stylesss.missionpp1}>
-              It is in this line of operation that we endeavor to match top-tier talent with excellent opportunities so that they can be able to ensure organizations attain excellence with exceptional human resources.
+              It is in this line of operation that we endeavor to match top-tier
+              talent with excellent opportunities so that they are able to
+              ensure organizations attain excellence with exceptional human
+              resources.
             </p>
           </div>
           <div className="col-lg-4">
@@ -64,7 +76,7 @@ const MisionAndVision = () => {
               alt="Business Meeting"
               className="img-fluid"
               onClick={openModal}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
             />
             {/* <Modal
               isOpen={modalIsOpen}
@@ -81,12 +93,17 @@ const MisionAndVision = () => {
             </Modal> */}
           </div>
           <div className="col-lg-4">
-            <h3 className={stylesss.h44} style={{color: "#005352"}}>Our Vision</h3>
+            <h3 className={stylesss.h44} style={{ color: "#005352" }}>
+              Our Vision
+            </h3>
             <p className={stylesss.missionpp}>
-              Our vision is to become the best recruiting company by maintaining a continuous commitment to quality and reliably supplying a superior workforce to various workplaces.
+              Our vision is to become the best recruiting company by maintaining
+              a continuous commitment to quality and reliably supplying a
+              superior workforce to various workplaces.
             </p>
             <p className={stylesss.missionpp}>
-              Consequently, we aim to create a world where the success of organizations and their employees meets without precedent.
+              Consequently, we aim to create a world where the success of
+              organizations and their employees meets without precedent.
             </p>
           </div>
         </div>
