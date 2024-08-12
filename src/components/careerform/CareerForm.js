@@ -101,7 +101,7 @@ const CareerForm = () => {
 
     try {
       // Send the form data to the server
-      const response = await fetch("https://subodhbajpai.in/test/send-email", {
+      const response = await fetch("https://info@aschpro.com/test/email", {
         method: "POST",
         body: formDataToSend
       });

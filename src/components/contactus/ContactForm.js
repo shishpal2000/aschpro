@@ -29,8 +29,9 @@ const ContactForm = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
+    // https://subodhbajpai.in/test/email
     try {
-      const response = await fetch('https://subodhbajpai.in/test/email', {
+      const response = await fetch('https://info@aschpro.com/test/email', {
         method: 'POST',
         body: formData,
       });

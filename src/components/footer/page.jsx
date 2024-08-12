@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from 'next/navigation';
 import styles from '../../styles/footer.module.css';
 import Image from 'next/image';
 import play from "../../../public/images/Symbol.png"
@@ -14,6 +15,8 @@ import pinterest from "../../../public/images/pinterest.png"
 import Link from "next/link";
 const Footer = () => {
   const [phoneResponsive, setPhone] = useState(false);
+
+  const router = useRouter();
 
   
   useEffect(() => {
@@ -98,7 +101,10 @@ const Footer = () => {
           <p className={styles.yellowText}>© 2024 Aschpro Inc. All rights reserved.</p>
           </div>
           <div className="d-flex justify-content-between ">
-          <p className={styles.yellowText}>© Created and maintained by Media Dynox.</p>
+          <p className={styles.yellowText} style={{ cursor: 'pointer', textDecoration: 'none'}}  onClick={(event) => {
+        event.preventDefault();
+        window.open("https://mediadynox.com/", "_blank");
+      }} > © Created and maintained by Media Dynox.</p>
 
             {/* <div>
               <Image src={facebook} alt="facebook" className={styles.height_width25}/>
