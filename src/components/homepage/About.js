@@ -88,22 +88,38 @@ const About = () => {
             <div className={styles.center_11}>
               <p className={styles.orangeText}>About Us</p>
               {phone ? (
-                <h2 className={`${styles.heading_tag_about} ${styles.capitalize}`}>
+                <h2
+                  className={`${styles.heading_tag_about} ${styles.capitalize}`}
+                >
                   We&rsquo;re your gateway to mastering staffing & recruitment
                 </h2>
               ) : (
-                <h2 className={`${styles.heading_tag_about} ${styles.capitalize}`}>
+                <h2
+                  className={`${styles.heading_tag_about} ${styles.capitalize}`}
+                >
                   We&rsquo;re your gateway to mastering staffing & recruitment
                 </h2>
               )}
 
               <p className={styles.greyText1}>
-                There are hundreds of free and paid job boards in India, both locally and worldwide. But which of the vast array of job sites in India are the most effective for advertising? Put differently, where would you be more comfortable allocating a portion of your hiring budget or resources to draw in quality applicants?
+                There are hundreds of job portals available in India, both free
+                and paid. However it gets difficult to pick the most effective
+                organisation to bring in the most quality applicants. Here comes
+                in Aschpro. Here we tailor personally crafted lists and layouts
+                to cater to our clients. With the use of modern technology and
+                our top-tier recruitment specialists, we help both the employers
+                and the employees.
               </p>
               <p className={styles.greyText2}>
-                We&apos;ve compiled a handy list of the top job sites across the world to make it easier for you to find the best ones for your needs. Using our list of Indian job sites to select the ones that suit your industry and open positions is a good way to ensure that your recruiting mix is diverse.
+                At Aschpro, everyone&rsquo;s needs are manufactured personally
+                to deliver a high-quality plan for the client. We make sure to
+                help you grow your work family with quality recruits who can
+                further help the company to yeild great results.
               </p>
-              <div className={styles.mtCustom} onClick={() => router.push("/about")}>
+              <div
+                className={styles.mtCustom}
+                onClick={() => router.push("/about")}
+              >
                 <Button variant="primary">Know More &#8594;</Button>
               </div>
             </div>

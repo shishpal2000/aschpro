@@ -111,15 +111,15 @@ const Herosection = () => {
               </motion.div>
               {phone ? (
                 <p className={styles.p2_head_title}>
-                  We ensure everyone has an easy-to-use and cooperative
-                  experience, including prospects, hiring managers, recruiters,
-                  and candidates.
+                  We ensure everyone an easy-to-use and cooperative experience,
+                  including prospects, hiring managers, recruiters, and
+                  candidates.
                 </p>
               ) : (
                 <p className={styles.p2_head_title}>
-                  We ensure everyone has an easy-to-use and cooperative
-                  experience, including <br /> prospects, hiring managers,
-                  recruiters, and candidates.
+                  We ensure everyone an easy-to-use and cooperative experience,
+                  including <br /> prospects, hiring managers, recruiters, and
+                  candidates.
                 </p>
               )}
 

@@ -44,30 +44,31 @@ const MisionAndVision = () => {
             className={`${stylesss.missionP}`}
             style={{ textTransform: "capitalize" }}
           >
-            {" "}MISSION & VISION
+            {" "}
+            MISSION & VISION
           </p>
-          {phone
-            ? <h2 className={stylesss.missionh}>
-                Get Unparalleled Access to Top-Qualified Candidates
-              </h2>
-            : <h2 className={stylesss.missionh}>
-                Get Unparalleled Access to <br /> Top-Qualified Candidates
-              </h2>}
+          {phone ? (
+            <h2 className={stylesss.missionh}>
+              Get Unparalleled Access to Top-Qualified Candidates
+            </h2>
+          ) : (
+            <h2 className={stylesss.missionh}>
+              Get Unparalleled Access to <br /> Top-Qualified Candidates
+            </h2>
+          )}
 
           <div className="col-lg-4">
             <h3 className={stylesss.h441} style={{ color: "#005352" }}>
               Our Mission
             </h3>
-            <p className={stylesss.missionpp1}>
-              Our mission is to strive to be the leading recruitment agent that
-              is interested in finding the best employees who deliver A-one
-              performance.
+            <p className={stylesss.missionpp}>
+              Our mission is to be the leading recruitment platform providing
+              the best talents to emplyers for their growth
             </p>
-            <p className={stylesss.missionpp1}>
-              It is in this line of operation that we endeavor to match top-tier
-              talent with excellent opportunities so that they are able to
-              ensure organizations attain excellence with exceptional human
-              resources.
+            <p className={stylesss.missionpp}>
+              It is our top-most priority to connect the best of talent with
+              excellent opportunities in order for them to provide exceptional
+              services to their clients.
             </p>
           </div>
           <div className="col-lg-4">
