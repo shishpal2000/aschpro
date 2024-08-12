@@ -60,19 +60,19 @@ const Choose = () => {
 
   const cardData = [
     {
-      title: "Extensive Talent Network",
+      title: "Extensive Networking",
       shortdesc:
         "Furthermore, our vast network of skilled professionals across the industry provides you the top talent.",
     },
     {
       title: "Proven Proficiency",
       shortdesc:
-        "Moreover, the quest for more skilled professionals and the maturity of our means have acquired us an expertise.",
+        "The customised strategies laid out by our professionals have helped us gain much experience and expertise to help businesses from across sectors.",
     },
     {
       title: "Dedicated Client Support",
       shortdesc:
-        "On top of that, we assure your contentment by backing you up from the get-go through the whole contract period.",
+        "End-to-end solution. We will also be available to our clients to solve all their problems.",
     },
   ];
 

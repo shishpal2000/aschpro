@@ -9,6 +9,8 @@ import Slider from "react-slick";
 import Chearful from "../../../public/images/cheerful.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import profile1 from "../../../public/images/profile1.png";
+import profile2 from "../../../public/images/profile2.jpg";
 
 const Review = () => {
   const settings = {
@@ -66,11 +68,13 @@ const Review = () => {
                       <FontAwesomeIcon icon={faStar} />
                     </div>
                     <p className={styles.paras}>
-                      We&apos;ve partnered with aschpro for several years, and they consistently deliver high-quality candidates who fit our company.
+                      We&apos;ve partnered with aschpro for several years, and
+                      they consistently deliver high-quality candidates who fit
+                      our company.
                     </p>
                     <div className={styles.client_info}>
                       <Image
-                        src={Chearful}
+                        src={profile1}
                         alt="Client Image"
                         className="img-fluid"
                       />
@@ -93,11 +97,12 @@ const Review = () => {
                       <FontAwesomeIcon icon={faStar} />
                     </div>
                     <p className={styles.paras}>
-                      The experts at aschpro bring us qualified professionals by understanding our company&rsquo;s requirements. 
+                      The experts at aschpro bring us qualified professionals by
+                      understanding our company&rsquo;s requirements.
                     </p>
                     <div className={styles.client_info}>
                       <Image
-                        src={Chearful}
+                        src={profile2}
                         alt="Client Image"
                         className="img-fluid"
                       />
