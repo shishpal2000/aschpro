@@ -10,9 +10,9 @@ import test from "../../../public/images/test.png";
 const Choose = () => {
   const cardData = [
     {
-      title: "Permanent Expertise",
+      title: "Permanent expertise",
       shortdesc:
-        "Aschpro is recognisable due to following audiences, staff needs, background checks and individual strategies for hiring.",
+        "Aschpro is a perfect fit because of its consideration of the staff's needs, background checks, and individual hiring strategies.",
     },
     {
       title: "Inspirational technology ",
@@ -20,7 +20,7 @@ const Choose = () => {
         "IT services should be creative and dynamic, so Aschpro enables IT Cloud, AI, Construction, Accounting and Enterprise applications.",
     },
     {
-      title: "Worldwide Recruitment",
+      title: "Worldwide recruitment",
       shortdesc:
         "Aschpro’s global network supports in creating a knowledge and cross-border recruitment process to hire international candidates.",
     },
