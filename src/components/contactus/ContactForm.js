@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import stylescon from "../../styles/contactus.module.css";
 import Button from "../../components/button";
 import { useRouter } from "next/navigation";
+import Swal from 'sweetalert2';
 
 const ContactForm = () => {
-  const Router=useRouter()
+  const Router = useRouter()
   const [phone, setPhone] = useState(false);
 
   useEffect(() => {
@@ -29,23 +30,35 @@ const ContactForm = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    // https://subodhbajpai.in/test/email
     try {
-      const response = await fetch('https://info@aschpro.com/test/email', {
+      const response = await fetch('https://ashpro-backend.onrender.com/api/contact/submit-form', {
         method: 'POST',
         body: formData,
       });
 
-      const result = await response.text();
-      if (result === 'success') {
-        alert('Message sent successfully!');
-        window.location.reload();
+      const result = await response.json(); 
+      if (result.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: result.message, // Show success message from the backend
+        }).then(() => {
+          window.location.reload();
+        });
       } else {
-        alert('Failed to send message.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: result.message || 'Failed to send message.',
+        });
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('An error occurred.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'An error occurred.',
+      });
     }
   };
 

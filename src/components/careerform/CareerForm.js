@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import stylescon from "../../styles/contactus.module.css";
 import Button from "../button";
+import Swal from 'sweetalert2';
 import { useRouter } from "next/navigation";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 const CareerForm = () => {
   const Router = useRouter();
@@ -13,43 +14,43 @@ const CareerForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phoneNumber: "",
+    phone: "",
+    jobId: "",
     location: "",
     jobTitle: ""
   });
   const [file, setFile] = useState(null);
-  const [captchaToken, setCaptchaToken] = useState(null);
+  // const [captchaToken, setCaptchaToken] = useState(null);
 
   useEffect(() => {
-    // Function to fetch form data based on slug
-    const fetchFormData = async (slug) => {
+    const fetchFormData = async (jobId) => {
       try {
-        const response = await fetch(`https://aschpro.mediadynox.in/api/job/${slug}`);
+        const response = await fetch(`https://ashpro-backend.onrender.com/api/jobs/get-job/${jobId}`);
         const data = await response.json();
-        setFormData({
-          Jobid: data.job_id || "",
-          location: data.location || "",
-          jobTitle: data.role || ""
-        });
+        if (data.success) {
+          setFormData(prevData => ({
+            ...prevData,
+            jobId: data.data.jobId || "",
+            location: data.data.location || "",
+            jobTitle: data.data.role || ""
+          }));
+        } else {
+          console.error('Error fetching form data:', data.message);
+        }
       } catch (error) {
         console.error("Error fetching form data:", error);
       }
     };
 
-    // Extract slug from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const slug = urlParams.get("slug");
+    const jobId = urlParams.get("jobId");
 
-    if (slug) {
-      fetchFormData(slug);
+    if (jobId) {
+      fetchFormData(jobId);
     }
 
     const handleResize = () => {
-      if (window.innerWidth < 480) {
-        setPhone(true);
-      } else {
-        setPhone(false);
-      }
+      setPhone(window.innerWidth < 480);
     };
 
     window.addEventListener("resize", handleResize);
@@ -70,60 +71,61 @@ const CareerForm = () => {
   const handleRemoveFile = () => {
     setFileName("");
     setFile(null);
-    document.getElementById("file-upload").value = "";
+    document.getElementById("cv_file").value = "";
   };
 
-  const handleCaptchaChange = (token) => {
-    setCaptchaToken(token);
-  };
+  // const handleCaptchaChange = (token) => {
+  //   setCaptchaToken(token);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!captchaToken) {
-      alert("Please complete the CAPTCHA");
-      return;
-    }
+    // if (!captchaToken) {
+    //   alert("Please complete the CAPTCHA");
+    //   return;
+    // }
 
-    // Create a new FormData object to handle the form submission
     const formDataToSend = new FormData();
     formDataToSend.append("firstName", formData.firstName);
     formDataToSend.append("lastName", formData.lastName);
     formDataToSend.append("email", formData.email);
-    formDataToSend.append("phoneNumber", formData.phoneNumber);
-    formDataToSend.append("Jobid", formData.Jobid);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("jobId", formData.jobId);
     formDataToSend.append("location", formData.location);
     formDataToSend.append("jobTitle", formData.jobTitle);
-    formDataToSend.append("captchaToken", captchaToken);
+    // formDataToSend.append("captchaToken", captchaToken);
     if (file) {
-      formDataToSend.append("file-upload", file);
+      formDataToSend.append("cv_file", file);
     }
 
     try {
-      // Send the form data to the server
-      const response = await fetch("https://info@aschpro.com/test/email", {
+      const response = await fetch("https://ashpro-backend.onrender.com/api/career/application-submit", {
         method: "POST",
         body: formDataToSend
       });
 
-      // Check if the response was successful
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
-      // Get the result text from the response
       const result = await response.text();
-
-      // Display a success message to the user
-      alert(result);
-
-      // Redirect to the careers page
-      Router.push('/careers');
+      Swal.fire({
+        title: 'Success!',
+        text: result,
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        Router.push('/careers');
+      });
     } catch (error) {
-      
-      console.error("Email sent successfully:", error);
-      alert("Email sent successfully");
-      Router.push('/careers');
+      console.error("Error submitting application:", error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'An error occurred while submitting your application.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
     }
   };
 
@@ -175,28 +177,28 @@ const CareerForm = () => {
                 />
               </div>
               <div className="col-lg-12 mb-3">
-                <label htmlFor="phoneNumber" className="form-label">
+                <label htmlFor="phone" className="form-label">
                   Phone Number
                 </label>
                 <input
                   type="text"
                   className={`form-control py-3 ${stylescon.outlinenone}`}
-                  id="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                  id="phone"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+000"
                 />
               </div>
               <div className="col-lg-12 mb-3">
-                <label htmlFor="Jobid" className="form-label">
+                <label htmlFor="jobId" className="form-label">
                   Job-ID
                 </label>
                 <input
                   type="text"
                   className={`form-control py-3 ${stylescon.outlinenone}`}
-                  id="Jobid"
-                  value={formData.Jobid}
-                  placeholder="Enter your Jobid"
+                  id="jobId"
+                  value={formData.jobId}
+                  placeholder="Job ID"
                   readOnly
                 />
               </div>
@@ -210,7 +212,7 @@ const CareerForm = () => {
                   className={`form-control py-3 ${stylescon.outlinenone}`}
                   id="location"
                   value={formData.location}
-                  placeholder="Enter your Location"
+                  placeholder="Location"
                   readOnly
                 />
               </div>
@@ -223,17 +225,17 @@ const CareerForm = () => {
                   className={`form-control py-3 ${stylescon.outlinenone}`}
                   id="jobTitle"
                   value={formData.jobTitle}
-                  placeholder="Enter your Current/Previous Job Title"
+                  placeholder="Current/Previous Job Title"
                   readOnly
                 />
               </div>
               <div className="d-flex align-items-center">
-                <label htmlFor="file-upload" className="file-upload-label">
+                <label htmlFor="cv_file" className="file-input-label">
                   Upload Your CV
                 </label>
                 <input
                   type="file"
-                  id="file-upload"
+                  id="cv_file"
                   className="file-input"
                   onChange={handleFileChange}
                   hidden
@@ -250,7 +252,7 @@ const CareerForm = () => {
                   </div>
                 )}
                 <style jsx>{`
-                  .file-upload-label {
+                  .file-input-label {
                     display: inline-block;
                     padding: 10px 20px;
                     background-color: #f7f8fa;
@@ -282,13 +284,13 @@ const CareerForm = () => {
                   }
                 `}</style>
               </div>
-              
-              <div className="col-lg-12 mb-3 mt-3">
+
+              {/* <div className="col-lg-12 mb-3 mt-3">
                 <ReCAPTCHA
                   sitekey="6Lfm9RIqAAAAANm5O1flDtLz-m7K5meslMirXKmZ"
                   onChange={handleCaptchaChange}
                 />
-              </div>
+              </div> */}
               <div>
                 <Button type="submit" className={`mt-2`} variant="primary">
                   Submit

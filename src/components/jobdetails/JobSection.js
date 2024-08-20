@@ -1,39 +1,43 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import styles from '../../styles/blogDetails.module.css'
+import styles from '../../styles/blogDetails.module.css';
 import React, { useEffect, useState } from "react";
 
 const JobSection = () => {
-  const [jobData, setjobData] = useState(null);
+  const [jobData, setJobData] = useState(null);
   const pathName = usePathname();
 
   useEffect(() => {
     if (pathName) {
-      const slug = pathName.split("/").pop(); // Extract the slug from the pathname
+      const slug = pathName.split("/").pop(); // Extract the job ID from the pathname
 
-      fetch(`https://aschpro.mediadynox.in/api/job/${slug}`)
+      fetch(`https://ashpro-backend.onrender.com/api/jobs/get-job/${slug}`)
         .then(response => response.json())
-        .then(data => setjobData(data))
+        .then(responseData => {
+          if (responseData.success) {
+            setJobData(responseData.data); // Access job details from the `data` property
+          } else {
+            console.error('Error: ', responseData.message);
+          }
+        })
         .catch(error => console.error('Error fetching Job data:', error));
     }
   }, [pathName]);
 
   if (!jobData) {
-    return ;
+    return <p>Loading...</p>; // Display loading text while fetching data
   }
 
   return (
     <div className={styles.careerWrapper}>
-    <div className="container">
-      <p className={styles.carryp1}>Careers Details</p>
-      <h1 className={styles.carryjh1} style={{textTransform:'capitalize'}}>{jobData.role}</h1>
-    <p className={styles.carryp2}>{jobData.job_id} | {jobData.location}</p>
+      <div className="container">
+        <p className={styles.carryp1}>Career Details</p>
+        <h1 className={styles.carryjh1}>{jobData.role}</h1>
+        <p className={styles.carryp2}>{jobData.jobId} | {jobData.location}</p>
+      </div>
     </div>
+  );
+};
 
-  </div>
-  
-  )
-}
-
-export default JobSection
+export default JobSection;
