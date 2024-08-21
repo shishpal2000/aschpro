@@ -13,7 +13,7 @@ const BlogDetail = () => {
     if (pathName) {
       const slug = pathName.split("/").pop(); // Extract the slug from the pathname
 
-      fetch(`https://ashpro-backend.onrender.com/api/blogs/get-blog/${slug}`)
+      fetch(`https://api.aschpro.com/api/blogs/get-blog/${slug}`)
         .then(response => response.json())
         .then(data => {
           setBlogData(data?.data);
@@ -33,7 +33,7 @@ const BlogDetail = () => {
           <div className="row w-80">
             <div className={styles.middleBlogImage}>
               <img
-                src={`https://ashpro-backend.onrender.com/${blogData.blog_image}`}
+                src={`https://api.aschpro.com/${blogData.blog_image}`}
                 className={styles.middleBlogImage}
                 alt={blogData.title}
               />

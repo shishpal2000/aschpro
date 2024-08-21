@@ -11,7 +11,7 @@ const Resource = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://ashpro-backend.onrender.com/api/blogs/get-all-blog');
+        const response = await fetch('https://api.aschpro.com/api/blogs/get-all-blog');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -36,7 +36,7 @@ const Resource = () => {
     return (
       <div className={styles.blueBox}>
         <div className={styles.positionRelative}>
-          <img src={`https://ashpro-backend.onrender.com/${blog_image}`} alt={title} className={styles.blogImg} width={300} height={200} />
+          <img src={`https://api.aschpro.com/${blog_image}`} alt={title} className={styles.blogImg} width={300} height={200} />
           <div className={styles.tagDate}>
             <p className={styles.textStyle1}>{formatDate(createdAt)}</p>
           </div>

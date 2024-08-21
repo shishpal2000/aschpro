@@ -25,7 +25,7 @@ const CareerForm = () => {
   useEffect(() => {
     const fetchFormData = async (jobId) => {
       try {
-        const response = await fetch(`https://ashpro-backend.onrender.com/api/jobs/get-job/${jobId}`);
+        const response = await fetch(`https://api.aschpro.com/api/jobs/get-job/${jobId}`);
         const data = await response.json();
         if (data.success) {
           setFormData(prevData => ({
@@ -135,7 +135,7 @@ const CareerForm = () => {
     }
 
     try {
-      const response = await fetch("https://ashpro-backend.onrender.com/api/career/application-submit", {
+      const response = await fetch("https://api.aschpro.com/api/career/application-submit", {
         method: "POST",
         body: formDataToSend
       });

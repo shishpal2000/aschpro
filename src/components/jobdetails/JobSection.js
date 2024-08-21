@@ -12,7 +12,7 @@ const JobSection = () => {
     if (pathName) {
       const slug = pathName.split("/").pop(); // Extract the job ID from the pathname
 
-      fetch(`https://ashpro-backend.onrender.com/api/jobs/get-job/${slug}`)
+      fetch(`https://api.aschpro.com/api/jobs/get-job/${slug}`)
         .then(response => response.json())
         .then(responseData => {
           if (responseData.success) {

@@ -18,7 +18,7 @@ const JobDetail = () => {
                 return;
             }
             try {
-                const response = await fetch(`https://ashpro-backend.onrender.com/api/jobs/get-job/${jobId}`);
+                const response = await fetch(`https://api.aschpro.com/api/jobs/get-job/${jobId}`);
                 const responseData = await response.json();
                 if (responseData.success) {
                     setJobData(responseData.data);

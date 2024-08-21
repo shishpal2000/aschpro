@@ -35,7 +35,7 @@ const Careertable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://ashpro-backend.onrender.com/api/jobs/all-jobs"); // Replace with your API endpoint
+        const response = await fetch("https://api.aschpro.com/api/jobs/all-jobs"); // Replace with your API endpoint
         const result = await response.json();
 
         // Extract the data array from the response

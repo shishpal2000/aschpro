@@ -25,7 +25,7 @@ const Card = ({
     >
       <div className={styles.positionRelative}>
         <img
-          src={`https://ashpro-backend.onrender.com/${blog_image}`}
+          src={`https://api.aschpro.com/${blog_image}`}
           alt={title}
           className={styles.blogImg}
         />
@@ -75,7 +75,7 @@ const Resource = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://ashpro-backend.onrender.com/api/blogs/get-all-blog");
+        const response = await fetch("https://api.aschpro.com/api/blogs/get-all-blog");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

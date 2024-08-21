@@ -13,7 +13,7 @@ const BlogSection = () => {
       const slug = pathName.split("/").pop(); 
 
       if (slug) {
-        fetch(`https://ashpro-backend.onrender.com/api/blogs/get-blog/${slug}`)
+        fetch(`https://api.aschpro.com/api/blogs/get-blog/${slug}`)
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok');

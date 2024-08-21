@@ -39,7 +39,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchContactInfo = async () => {
       try {
-        const response = await fetch('https://ashpro-backend.onrender.com/api/contactinfo/get-contact-info');
+        const response = await fetch('https://api.aschpro.com/api/contactinfo/get-contact-info');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
