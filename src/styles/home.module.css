@@ -239,7 +239,7 @@
 .cartTop:hover {
   transform: scale(1.1);
   z-index: 99;
-  background-color: #2a9d8f;
+  background-color: #005456;
   color: #e0e0e0;
   border: none;
 }
