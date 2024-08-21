@@ -20,7 +20,7 @@ const CareerForm = () => {
     jobTitle: ""
   });
   const [file, setFile] = useState(null);
-  // const [captchaToken, setCaptchaToken] = useState(null);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     const fetchFormData = async (jobId) => {
@@ -74,17 +74,53 @@ const CareerForm = () => {
     document.getElementById("cv_file").value = "";
   };
 
-  // const handleCaptchaChange = (token) => {
-  //   setCaptchaToken(token);
-  // };
+  const validate = () => {
+    const errors = {};
+
+    if (!formData.firstName.trim()) {
+      errors.firstName = "First Name is required";
+    }
+
+    if (!formData.lastName.trim()) {
+      errors.lastName = "Last Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Email is invalid";
+    }
+
+    if (!formData.phone.trim()) {
+      errors.phone = "Phone Number is required";
+    } else if (!/^\+?[0-9]{7,15}$/.test(formData.phone)) {
+      errors.phone = "Phone Number is invalid";
+    }
+
+    if (!formData.jobId.trim()) {
+      errors.jobId = "Job ID is required";
+    }
+
+    if (!file) {
+      errors.file = "CV file is required";
+    }
+
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // if (!captchaToken) {
-    //   alert("Please complete the CAPTCHA");
-    //   return;
-    // }
+    if (!validate()) {
+      Swal.fire({
+        title: 'Validation Error',
+        text: 'Please fix the errors and try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
 
     const formDataToSend = new FormData();
     formDataToSend.append("firstName", formData.firstName);
@@ -94,7 +130,6 @@ const CareerForm = () => {
     formDataToSend.append("jobId", formData.jobId);
     formDataToSend.append("location", formData.location);
     formDataToSend.append("jobTitle", formData.jobTitle);
-    // formDataToSend.append("captchaToken", captchaToken);
     if (file) {
       formDataToSend.append("cv_file", file);
     }
@@ -128,7 +163,6 @@ const CareerForm = () => {
       });
     }
   };
-
   return (
     <div className="container">
       <div className={`row ${stylescon.marginTop}`}>
@@ -141,13 +175,14 @@ const CareerForm = () => {
                 </label>
                 <input
                   type="text"
-                  className={`form-control py-3 ${stylescon.outlinenone}`}
+                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.firstName ? 'is-invalid' : ''}`}
                   id="firstName"
                   value={formData.firstName}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                   placeholder="Enter your First name"
                   aria-label="First name"
                 />
+                {errors.firstName && <div className="invalid-feedback">{errors.firstName}</div>}
               </div>
               <div className={`col-lg-6 mb-3 ${stylescon.px_14}`}>
                 <label htmlFor="lastName" className="form-label">
@@ -155,13 +190,14 @@ const CareerForm = () => {
                 </label>
                 <input
                   type="text"
-                  className={`form-control py-3 ${stylescon.outlinenone}`}
+                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.lastName ? 'is-invalid' : ''}`}
                   id="lastName"
                   value={formData.lastName}
                   onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                   placeholder="Enter your Last Name"
                   aria-label="Last Name"
                 />
+                {errors.lastName && <div className="invalid-feedback">{errors.lastName}</div>}
               </div>
               <div className="col-lg-12 mb-3">
                 <label htmlFor="email" className="form-label">
@@ -169,7 +205,7 @@ const CareerForm = () => {
                 </label>
                 <input
                   type="email"
-                  className={`form-control py-3 ${stylescon.outlinenone}`}
+                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.email ? 'is-invalid' : ''}`}
                   id="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -181,8 +217,8 @@ const CareerForm = () => {
                   Phone Number
                 </label>
                 <input
-                  type="text"
-                  className={`form-control py-3 ${stylescon.outlinenone}`}
+                  type="number"
+                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.phone ? 'is-invalid' : ''}`}
                   id="phone"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -218,14 +254,14 @@ const CareerForm = () => {
               </div>
               <div className="col-lg-12 mb-3">
                 <label htmlFor="jobTitle" className="form-label">
-                  Current/Previous Job Title
+                  Job Title
                 </label>
                 <input
                   type="text"
                   className={`form-control py-3 ${stylescon.outlinenone}`}
                   id="jobTitle"
                   value={formData.jobTitle}
-                  placeholder="Current/Previous Job Title"
+                  placeholder="Job Title"
                   readOnly
                 />
               </div>

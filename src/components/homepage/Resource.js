@@ -1,31 +1,20 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import styles from "../../styles/home.module.css";
-import Image from "next/image";
+import Image from 'next/image';
 import Button from "../../components/button";
 import doubleArrow from "../../../public/images/double-arrow.png";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 const Card = ({
-  category_name,
-  dateofpublish,
   title,
-  shortdesc,
-  image,
-  imgalt,
+  content,
+  blog_image,
   url,
 }) => {
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat("en-US", {
-      day: "2-digit",
-      month: "long",
-    }).format(date);
-  };
-  const router = useRouter();
   return (
     <motion.div
       className={styles.blueBox}
@@ -35,20 +24,16 @@ const Card = ({
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className={styles.positionRelative}>
-        <div className={styles.tag}>{category_name}</div>
         <img
-          src={`https://aschpro.mediadynox.in/uploads/${image}`}
-          alt={imgalt}
+          src={`https://ashpro-backend.onrender.com/${blog_image}`}
+          alt={title}
           className={styles.blogImg}
         />
-        <div className={styles.tagDate}>
-          <p className={styles.textStyle1}>{formatDate(dateofpublish)}</p>
-        </div>
       </div>
       <div className={styles.align2}>
         <h4 className={styles.headingCustom}>{title}</h4>
         <div className={styles.head_description}>
-          <p>{shortdesc}</p>
+          <p>{content.substring(0, 150)}{content.length > 150 ? "..." : ""}</p>
         </div>
         <Link href={`/blogs/${url}`} style={{ textDecoration: "none" }}>
           <p className={`${styles.head_description} ${styles.read_more}`}>
@@ -63,27 +48,6 @@ const Card = ({
 
 const Resource = () => {
   const [cardData, setCardData] = useState([]);
-
-  useEffect(() => {
-    // Function to fetch data from API
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://aschpro.mediadynox.in/api/homeblogs"
-        ); // Replace with your API endpoint
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        setCardData(data); // Assuming data is an array of objects similar to your cardData structure
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData(); // Call the fetch data function
-  }, []); // Empty dependency array ensures useEffect runs once on component mount
-
   const router = useRouter();
   const [phone, setPhone] = useState(false);
   const { ref: sectionRef, inView: sectionInView } = useInView({
@@ -106,6 +70,23 @@ const Resource = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://ashpro-backend.onrender.com/api/blogs/get-all-blog");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setCardData(data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -160,7 +141,11 @@ const Resource = () => {
                 delay: index * 0.2,
               }}
             >
-              <Card {...card} />
+              <Card title={card.title}
+                createdAt={card.createdAt}
+                blog_image={card.blog_image}
+                content={card.content}
+                url={card._id} />
             </motion.div>
           ))}
         </div>

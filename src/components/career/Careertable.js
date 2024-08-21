@@ -38,9 +38,6 @@ const Careertable = () => {
         const response = await fetch("https://ashpro-backend.onrender.com/api/jobs/all-jobs"); // Replace with your API endpoint
         const result = await response.json();
 
-        // Debugging: Check the structure of the API response
-        console.log('API Response:', result);
-
         // Extract the data array from the response
         if (result.success && Array.isArray(result.data)) {
           setJobData(result.data);

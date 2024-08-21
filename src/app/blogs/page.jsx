@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BlogData from "../../components/blogListing/BlogData";
 import BlogSection from "../../components/blogListing/BlogSection";
-import BlogQNS from "../../components/blogListing/BlogQNS";
+// import BlogQNS from "../../components/blogListing/BlogQNS";
 import Resource from "../../components/blogListing/Resource";
 // import Resourses from "../../components/blogListing/Resource"
 

@@ -225,13 +225,7 @@ const Header = () => {
                 </Link>
                 <Link
                   href="/contact_us"
-                  className={`${styles.link} ${
-                    pathname === "/contact_us"
-                      ? scrolled
-                        ? styles.active
-                        : styles.active1
-                      : ""
-                  }`}
+                  className={`${styles.link}`}
                 >
                   <li>
                     <Button variant="primary">Contact Us</Button>
