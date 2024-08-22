@@ -93,7 +93,6 @@ const ContactForm = () => {
         Swal.fire({
           icon: 'success',
           title: 'Success!',
-          text: result.message,
         }).then(() => {
           window.location.reload();
         });

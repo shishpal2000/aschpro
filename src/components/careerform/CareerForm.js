@@ -147,7 +147,6 @@ const CareerForm = () => {
       const result = await response.text();
       Swal.fire({
         title: 'Success!',
-        text: result,
         icon: 'success',
         confirmButtonText: 'OK'
       }).then(() => {
