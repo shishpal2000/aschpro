@@ -32,7 +32,7 @@ const Resource = () => {
   };
   
 
-  const Card = ({ title, createdAt, blog_image, content, url }) => {
+  const Card = ({ title, createdAt, blog_image, short_desc, url }) => {
     return (
       <div className={styles.blueBox}>
         <div className={styles.positionRelative}>
@@ -44,7 +44,7 @@ const Resource = () => {
         <div className={styles.align2}>
           <h4 className={styles.headingCustom}>{title}</h4>
           <div className={styles.head_description}>
-          <p>{content.substring(0, 150)}{content.length > 150 ? "..." : ""}</p>
+          <p>{short_desc?.substring(0, 150)}{short_desc?.length > 150 ? "..." : ""}</p>
         </div>
           <Link href={`/blogs/${url}`} style={{ textDecoration: 'none' }}>
             <p className={`${styles.head_description} ${styles.read_more}`}>
@@ -66,7 +66,7 @@ const Resource = () => {
                 title={card.title}
                 createdAt={card.createdAt}
                 blog_image={card.blog_image}
-                content={card.content}
+                short_desc={card.short_desc}
                 url={card._id}
               />
             </div>

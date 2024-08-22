@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 const Card = ({
   title,
-  content,
+  short_desc,
   blog_image,
   url,
 }) => {
@@ -33,7 +33,7 @@ const Card = ({
       <div className={styles.align2}>
         <h4 className={styles.headingCustom}>{title}</h4>
         <div className={styles.head_description}>
-          <p>{content.substring(0, 150)}{content.length > 150 ? "..." : ""}</p>
+          <p>{short_desc?.substring(0, 150)}{short_desc?.length > 150 ? "..." : ""}</p>
         </div>
         <Link href={`/blogs/${url}`} style={{ textDecoration: "none" }}>
           <p className={`${styles.head_description} ${styles.read_more}`}>
@@ -144,7 +144,7 @@ const Resource = () => {
               <Card title={card.title}
                 createdAt={card.createdAt}
                 blog_image={card.blog_image}
-                content={card.content}
+                short_desc={card.short_desc}
                 url={card._id} />
             </motion.div>
           ))}
