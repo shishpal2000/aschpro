@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import stylescon from "../../styles/contactus.module.css";
 import Button from "../../components/button";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
-  const [contactInfo, setContactInfo] = useState({ email: '', address: '' });
+  const [contactInfo, setContactInfo] = useState({ email: "", address: "" });
   const [phone, setPhone] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,14 +27,16 @@ const ContactForm = () => {
   useEffect(() => {
     const fetchContactInfo = async () => {
       try {
-        const response = await fetch('https://api.aschpro.com/api/contactinfo/get-contact-info');
+        const response = await fetch(
+          "https://api.aschpro.com/api/contactinfo/get-contact-info"
+        );
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setContactInfo(data.data);
       } catch (error) {
-        console.error('Error fetching contact info:', error);
+        console.error("Error fetching contact info:", error);
       }
     };
 
@@ -43,30 +46,36 @@ const ContactForm = () => {
   const validateForm = (formData) => {
     const newErrors = {};
 
-    if (!formData.get('first_name')) {
-      newErrors.first_name = 'First name is required';
+    if (!formData.get("first_name")) {
+      newErrors.first_name = "First name is required";
     }
 
-    if (!formData.get('last_name')) {
-      newErrors.last_name = 'Last name is required';
+    if (!formData.get("last_name")) {
+      newErrors.last_name = "Last name is required";
     }
 
     const phonePattern = /^[0-9]{10}$/;
-    if (!formData.get('phone_number') || !phonePattern.test(formData.get('phone_number'))) {
-      newErrors.phone_number = 'Valid phone number is required';
+    if (
+      !formData.get("phone_number") ||
+      !phonePattern.test(formData.get("phone_number"))
+    ) {
+      newErrors.phone_number = "Valid phone number is required";
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.get('email_address') || !emailPattern.test(formData.get('email_address'))) {
-      newErrors.email_address = 'Valid email address is required';
+    if (
+      !formData.get("email_address") ||
+      !emailPattern.test(formData.get("email_address"))
+    ) {
+      newErrors.email_address = "Valid email address is required";
     }
 
-    if (!formData.get('message')) {
-      newErrors.message = 'Message cannot be empty';
+    if (!formData.get("message")) {
+      newErrors.message = "Message cannot be empty";
     }
 
-    if (!formData.get('privacy_policy')) {
-      newErrors.privacy_policy = 'You must agree with the Privacy Policy';
+    if (!formData.get("privacy_policy")) {
+      newErrors.privacy_policy = "You must agree with the Privacy Policy";
     }
 
     return newErrors;
@@ -74,42 +83,51 @@ const ContactForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (isSubmitting) return; // Prevent multiple submissions
+
+    setIsSubmitting(true);
     const formData = new FormData(event.target);
     const validationErrors = validateForm(formData);
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
+      setIsSubmitting(false);
       return;
     }
 
     try {
-      const response = await fetch('https://api.aschpro.com/api/contact/submit-form', {
-        method: 'POST',
-        body: formData,
-      });
+      const response = await fetch(
+        "https://api.aschpro.com/api/contact/submit-form",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const result = await response.json();
       if (result.success) {
         Swal.fire({
-          icon: 'success',
-          title: 'Success!',
+          icon: "success",
+          title: "Success!",
         }).then(() => {
           window.location.reload();
         });
       } else {
         Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: result.message || 'Failed to send message.',
+          icon: "error",
+          title: "Oops...",
+          text: result.message || "Failed to send message.",
         });
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'An error occurred.',
+        icon: "error",
+        title: "Error",
+        text: "An error occurred.",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -203,8 +221,13 @@ const ContactForm = () => {
                 {errors.privacy_policy && <p className={stylescon.error}>{errors.privacy_policy}</p>}
               </div>
               <div>
-                <Button type="submit" className={`mt-2`} variant="primary">
-                  Submit
+                <Button
+                  type="submit"
+                  className={`mt-2`}
+                  variant="primary"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </div>
             </div>

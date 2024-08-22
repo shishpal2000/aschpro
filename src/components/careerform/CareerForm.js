@@ -10,6 +10,7 @@ const CareerForm = () => {
   const Router = useRouter();
   const [phone, setPhone] = useState(false);
   const [fileName, setFileName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -111,6 +112,7 @@ const CareerForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return; // Prevent multiple submissions
 
     if (!validate()) {
       Swal.fire({
@@ -121,6 +123,8 @@ const CareerForm = () => {
       });
       return;
     }
+
+    setIsSubmitting(true);
 
     const formDataToSend = new FormData();
     formDataToSend.append("firstName", formData.firstName);
@@ -160,8 +164,11 @@ const CareerForm = () => {
         icon: 'error',
         confirmButtonText: 'OK'
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
   return (
     <div className="container">
       <div className={`row ${stylescon.marginTop}`}>
@@ -319,23 +326,21 @@ const CareerForm = () => {
                   }
                 `}</style>
               </div>
-
-              {/* <div className="col-lg-12 mb-3 mt-3">
-                <ReCAPTCHA
-                  sitekey="6Lfm9RIqAAAAANm5O1flDtLz-m7K5meslMirXKmZ"
-                  onChange={handleCaptchaChange}
-                />
-              </div> */}
               <div>
-                <Button type="submit" className={`mt-2`} variant="primary">
-                  Submit
+                <Button
+                  type="submit"
+                  className={`mt-2`}
+                  variant="primary"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </div>
             </div>
           </form>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
