@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import stylescon from "../../styles/contactus.module.css";
 import Button from "../button";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 // import ReCAPTCHA from "react-google-recaptcha";
 
@@ -18,7 +18,7 @@ const CareerForm = () => {
     phone: "",
     jobId: "",
     location: "",
-    jobTitle: ""
+    jobTitle: "",
   });
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
@@ -26,17 +26,19 @@ const CareerForm = () => {
   useEffect(() => {
     const fetchFormData = async (jobId) => {
       try {
-        const response = await fetch(`https://api.aschpro.com/api/jobs/get-job/${jobId}`);
+        const response = await fetch(
+          `https://api.aschpro.com/api/jobs/get-job/${jobId}`
+        );
         const data = await response.json();
         if (data.success) {
-          setFormData(prevData => ({
+          setFormData((prevData) => ({
             ...prevData,
             jobId: data.data.jobId || "",
             location: data.data.location || "",
-            jobTitle: data.data.role || ""
+            jobTitle: data.data.role || "",
           }));
         } else {
-          console.error('Error fetching form data:', data.message);
+          console.error("Error fetching form data:", data.message);
         }
       } catch (error) {
         console.error("Error fetching form data:", error);
@@ -115,12 +117,12 @@ const CareerForm = () => {
     if (isSubmitting) return; // Prevent multiple submissions
 
     if (!validate()) {
-      Swal.fire({
-        title: 'Validation Error',
-        text: 'Please fix the errors and try again.',
-        icon: 'error',
-        confirmButtonText: 'OK'
-      });
+      // Swal.fire({
+      //   title: "Validation Error",
+      //   text: "All fields are required.",
+      //   icon: "error",
+      //   confirmButtonText: "OK",
+      // });
       return;
     }
 
@@ -139,10 +141,13 @@ const CareerForm = () => {
     }
 
     try {
-      const response = await fetch("https://api.aschpro.com/api/career/application-submit", {
-        method: "POST",
-        body: formDataToSend
-      });
+      const response = await fetch(
+        "https://api.aschpro.com/api/career/application-submit",
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -150,20 +155,20 @@ const CareerForm = () => {
 
       const result = await response.text();
       Swal.fire({
-        title: 'Success!',
-        icon: 'success',
-        confirmButtonText: 'OK'
+        title: "Success!",
+        icon: "success",
+        confirmButtonText: "OK",
       }).then(() => {
-        Router.push('/careers');
+        Router.push("/careers");
       });
     } catch (error) {
       console.error("Error submitting application:", error);
-      Swal.fire({
-        title: 'Error!',
-        text: 'An error occurred while submitting your application.',
-        icon: 'error',
-        confirmButtonText: 'OK'
-      });
+      // Swal.fire({
+      //   title: "Error!",
+      //   text: "An error occurred while submitting your application.",
+      //   icon: "error",
+      //   confirmButtonText: "OK",
+      // });
     } finally {
       setIsSubmitting(false);
     }
@@ -172,7 +177,9 @@ const CareerForm = () => {
   return (
     <div className="container">
       <div className={`row ${stylescon.marginTop}`}>
-        <div className={`offset-lg-2 col-lg-8 ${stylescon.mt_4} ${stylescon.mb_4}`}>
+        <div
+          className={`offset-lg-2 col-lg-8 ${stylescon.mt_4} ${stylescon.mb_4}`}
+        >
           <form onSubmit={handleSubmit}>
             <div className={`row ${stylescon.marginTopInner}`}>
               <div className={`col-lg-6 mb-3 ${stylescon.px_14}`}>
@@ -181,14 +188,20 @@ const CareerForm = () => {
                 </label>
                 <input
                   type="text"
-                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.firstName ? 'is-invalid' : ''}`}
+                  className={`form-control py-3 ${stylescon.outlinenone} ${
+                    errors.firstName ? "is-invalid" : ""
+                  }`}
                   id="firstName"
                   value={formData.firstName}
-                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, firstName: e.target.value })
+                  }
                   placeholder="Enter your First name"
                   aria-label="First name"
                 />
-                {errors.firstName && <div className="invalid-feedback">{errors.firstName}</div>}
+                {errors.firstName && (
+                  <div className="invalid-feedback">{errors.firstName}</div>
+                )}
               </div>
               <div className={`col-lg-6 mb-3 ${stylescon.px_14}`}>
                 <label htmlFor="lastName" className="form-label">
@@ -196,14 +209,20 @@ const CareerForm = () => {
                 </label>
                 <input
                   type="text"
-                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.lastName ? 'is-invalid' : ''}`}
+                  className={`form-control py-3 ${stylescon.outlinenone} ${
+                    errors.lastName ? "is-invalid" : ""
+                  }`}
                   id="lastName"
                   value={formData.lastName}
-                  onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, lastName: e.target.value })
+                  }
                   placeholder="Enter your Last Name"
                   aria-label="Last Name"
                 />
-                {errors.lastName && <div className="invalid-feedback">{errors.lastName}</div>}
+                {errors.lastName && (
+                  <div className="invalid-feedback">{errors.lastName}</div>
+                )}
               </div>
               <div className="col-lg-12 mb-3">
                 <label htmlFor="email" className="form-label">
@@ -211,12 +230,19 @@ const CareerForm = () => {
                 </label>
                 <input
                   type="email"
-                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.email ? 'is-invalid' : ''}`}
+                  className={`form-control py-3 ${stylescon.outlinenone} ${
+                    errors.email ? "is-invalid" : ""
+                  }`}
                   id="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   placeholder="Enter your email id"
                 />
+                {errors.email && (
+                  <div className="invalid-feedback">{errors.email}</div>
+                )}
               </div>
               <div className="col-lg-12 mb-3">
                 <label htmlFor="phone" className="form-label">
@@ -224,12 +250,19 @@ const CareerForm = () => {
                 </label>
                 <input
                   type="number"
-                  className={`form-control py-3 ${stylescon.outlinenone} ${errors.phone ? 'is-invalid' : ''}`}
+                  className={`form-control py-3 ${stylescon.outlinenone} ${
+                    errors.phone ? "is-invalid" : ""
+                  }`}
                   id="phone"
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="+000"
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                  placeholder="Enter your phone number"
                 />
+                {errors.phone && (
+                  <div className="invalid-feedback">{errors.phone}</div>
+                )}
               </div>
               <div className="col-lg-12 mb-3">
                 <label htmlFor="jobId" className="form-label">
@@ -271,17 +304,18 @@ const CareerForm = () => {
                   readOnly
                 />
               </div>
-              <div className="d-flex align-items-center">
+              <div className="col-lg-12 mb-3">
                 <label htmlFor="cv_file" className="file-input-label">
                   Upload Your CV
                 </label>
                 <input
                   type="file"
                   id="cv_file"
-                  className="file-input"
+                  className={`file-input ${errors.file ? "is-invalid" : ""}`}
                   onChange={handleFileChange}
                   hidden
                 />
+
                 {fileName && (
                   <div className="file-details">
                     <p className="file-name">{fileName}</p>
@@ -293,6 +327,11 @@ const CareerForm = () => {
                     </button>
                   </div>
                 )}
+
+                {errors.file && (
+                  <div className="invalid-feedback">{errors.file}</div>
+                )}
+
                 <style jsx>{`
                   .file-input-label {
                     display: inline-block;
@@ -324,8 +363,15 @@ const CareerForm = () => {
                   .remove-file-button:hover {
                     color: #c9302c;
                   }
+                  .invalid-feedback {
+                    display: block;
+                    color: #d9534f;
+                    font-size: 12px;
+                    margin-top: 5px;
+                  }
                 `}</style>
               </div>
+
               <div>
                 <Button
                   type="submit"
@@ -339,8 +385,8 @@ const CareerForm = () => {
             </div>
           </form>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 };
 
