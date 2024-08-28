@@ -163,6 +163,8 @@ const CareerForm = () => {
       });
     } catch (error) {
       console.error("Error submitting application:", error);
+
+
       // Swal.fire({
       //   title: "Error!",
       //   text: "An error occurred while submitting your application.",
@@ -306,7 +308,7 @@ const CareerForm = () => {
               </div>
               <div className="col-lg-12 mb-3">
                 <label htmlFor="cv_file" className="file-input-label">
-                  Upload Your CV
+                  Upload Your CV 
                 </label>
                 <input
                   type="file"
@@ -315,6 +317,7 @@ const CareerForm = () => {
                   onChange={handleFileChange}
                   hidden
                 />
+               
 
                 {fileName && (
                   <div className="file-details">
@@ -331,6 +334,8 @@ const CareerForm = () => {
                 {errors.file && (
                   <div className="invalid-feedback">{errors.file}</div>
                 )}
+
+                <div> Please upload PDF only*</div>
 
                 <style jsx>{`
                   .file-input-label {
@@ -370,7 +375,10 @@ const CareerForm = () => {
                     margin-top: 5px;
                   }
                 `}</style>
+             
               </div>
+
+              
 
               <div>
                 <Button
@@ -384,6 +392,7 @@ const CareerForm = () => {
               </div>
             </div>
           </form>
+     
         </div>
       </div>
     </div>
