@@ -64,10 +64,13 @@ const JobDetail = () => {
                             <p>No responsibilities listed</p>
                         )}
 
+                        <div className={styles.btns}>
+
                         <Button variant="primary" className={styles.buttons} onClick={() => router.push(`/careerform/?jobId=${pathName.split("/").pop()}`)}>Apply Now</Button>
                         <Link href="/careers">
                             <Button variant="primary" className={styles.buttons}>Back To Careers</Button>
                         </Link>
+                        </div>
                         <br /><br />
                     </div>
                 </div>

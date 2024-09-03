@@ -15,8 +15,6 @@
   color: rgba(233, 196, 106, 1);
 }
 
-
-
 .carryh1 {
   padding-top: 1rem;
   font-size: 52px;
@@ -40,16 +38,14 @@
 }
 
 .carryp2 {
-  
   font-size: 16px;
   font-weight: 600;
- 
+
   letter-spacing: -2%;
   color: #fff;
   padding-bottom: 6rem;
   width: 60%;
 }
-
 
 .carryp {
   margin-top: 2rem;
@@ -178,11 +174,9 @@
   padding-bottom: 3rem !important;
 }
 
-
-
-.backcard{
+.backcard {
   background-color: rgba(249, 249, 249, 1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
   margin: 20px auto;
@@ -191,13 +185,17 @@
   padding-left: 50px;
   padding-top: 50px;
   padding-bottom: 50px;
-
 }
 
-.buttons{
+.btns{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttons {
   margin-right: 10px;
 }
-
 
 
 
@@ -335,6 +333,12 @@
     padding-right: 14px;
   }
 
+  .btns{
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
   .carryh1 {
     padding-top: 1rem;
     font-size: 35px;
@@ -354,8 +358,11 @@
     align-items: center;
   }
 
+  .fontSize > h1 {
+    padding-left: 14px;
+  }
+
   .fontSize > p {
-    text-align: justify;
     padding-left: 14px;
     padding-right: 14px;
   }

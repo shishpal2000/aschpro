@@ -41,6 +41,7 @@ const BlogDetail = () => {
 
             <div className={styles.fontSize}>
               <h1>{blogData.title}</h1>
+              <br/>
               <p dangerouslySetInnerHTML={{ __html: blogData?.content }}></p>
             </div>
           </div>
