@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "../../styles/home.module.css";
 import Image from "next/image";
-import about from "../../../public/images/homeAbout.png";
+import about from "../../../public/images/women3.jpg";
 import Button from "../../components/button";
 import { useRouter } from "next/navigation";
 

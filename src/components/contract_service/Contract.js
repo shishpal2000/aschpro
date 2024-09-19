@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import styles from "../../styles/home.module.css";
 import style from "../../styles/services.module.css";
 import Image from "next/image";
-import contract from "../../../public/images/contract.png";
+import contract from "../../../public/images/D2.jpg";
 
 const Contract = () => {
   const [phone, setPhone] = useState(false);
@@ -116,25 +116,29 @@ const Contract = () => {
             <div className="col-lg-3">
               <h3 className={style.ContractHeading}>Flexibility</h3>
               <p className={style.ContractSubHeading}>
-              Flexibility provides to scale your workforce quickly and cost-effectively for short-term needs.
+                Flexibility provides to scale your workforce quickly and
+                cost-effectively for short-term needs.
               </p>
             </div>
             <div className="col-lg-3">
               <h3 className={style.ContractHeading}>Cost Efficiency</h3>
               <p className={style.ContractSubHeading}>
-              Moreover, cost-efficient, reducing expenses on benefits and training for short-term hires.
+                Moreover, cost-efficient, reducing expenses on benefits and
+                training for short-term hires.
               </p>
             </div>
             <div className="col-lg-3">
               <h3 className={style.ContractHeading}>Skills & Speed</h3>
               <p className={style.ContractSubHeading}>
-              Furthermore, skill and speed ensures skilled professionals and speedy hiring for immediate business needs.
+                Furthermore, skill and speed ensures skilled professionals and
+                speedy hiring for immediate business needs.
               </p>
             </div>
             <div className="col-lg-3">
               <h3 className={style.ContractHeading}>Risk Mitigation</h3>
               <p className={style.ContractSubHeading}>
-              Additionally, Risk mitigation offers flexible, temporary solutions without long-term commitments.
+                Additionally, Risk mitigation offers flexible, temporary
+                solutions without long-term commitments.
               </p>
             </div>
           </div>

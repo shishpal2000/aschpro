@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import VideoImage from "../../../public/images/Video1.png";
+import VideoImage from "../../../public/images/2women.jpg";
 import Modal from "react-modal";
 import stylesss from "../../styles/about.module.css";
 import style from "../../styles/missiontime.module.css";
