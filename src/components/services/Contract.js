@@ -87,19 +87,19 @@ const Contract = () => {
               )}
 
               <p className={style.greyText1}>
-              At Aschpro, we are a contract recruitment agency. Our particular
+                At Aschpro, we are a contract recruitment agency. Our particular
                 solutions often involve temporary Contract staffing services.
                 Therefore understand that we are operating in a highly dynamic
                 business environment.
               </p>
               <p className={style.greyText1}>
-              Our methods of working with contract staffing are different as
+                Our methods of working with contract staffing are different as
                 we are meticulous and responsive to our clients needs. However,
                 we commence with a detailed needs analysis to comprehend your
                 requirements.
               </p>
               <p className={style.greyText1}>
-              So , Simply give us a call today and we will show you how we can
+                So , Simply give us a call today and we will show you how we can
                 create a successful business with the right contract staffing
                 solution.
               </p>
@@ -126,25 +126,29 @@ const Contract = () => {
             <div className="col-lg-3">
               <h4 className={style.ContractHeading}>Flexibility</h4>
               <p className={style.ContractSubHeading}>
-              Flexibility provides to scale your workforce quickly and cost-effectively for short-term needs.
+                Flexibility provides to scale your workforce quickly and
+                cost-effectively for short-term needs.
               </p>
             </div>
             <div className="col-lg-3">
               <h4 className={style.ContractHeading}>Cost Efficiency</h4>
               <p className={style.ContractSubHeading}>
-              Moreover, cost-efficient, reducing expenses on benefits and training for short-term hires.
+                Moreover, cost-efficient, reducing expenses on benefits and
+                training for short-term hires.
               </p>
             </div>
             <div className="col-lg-3">
               <h4 className={style.ContractHeading}>Skills & Speed</h4>
               <p className={style.ContractSubHeading}>
-              Furthermore, skill and speed ensures skilled professionals and speedy hiring for immediate business needs.
+                Furthermore, skill and speed ensures skilled professionals and
+                speedy hiring for immediate business needs.
               </p>
             </div>
             <div className="col-lg-3">
               <h4 className={style.ContractHeading}>Risk Mitigation</h4>
               <p className={style.ContractSubHeading}>
-              Additionally, Risk mitigation offers flexible, temporary solutions without long-term commitments.
+                Additionally, Risk mitigation offers flexible, temporary
+                solutions without long-term commitments.
               </p>
             </div>
           </div>

@@ -10,24 +10,21 @@ const Service = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.1 });
 
-  useEffect(
-    () => {
-      if (inView) {
-        controls.start("visible");
-      } else {
-        controls.start("hidden");
-      }
-    },
-    [controls, inView]
-  );
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
 
   const imageVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   const textVariants = {
@@ -35,8 +32,8 @@ const Service = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   const containerVariants = {
@@ -46,14 +43,14 @@ const Service = () => {
       transition: {
         duration: 0.5,
         when: "beforeChildren",
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
@@ -67,7 +64,7 @@ const Service = () => {
         >
           <div className="col-lg-6 col-md-12 col-sm-12">
             <motion.img
-              src="images/homeService.png"
+              src="images/women1.png"
               alt=""
               className="img-fluid"
               variants={imageVariants}

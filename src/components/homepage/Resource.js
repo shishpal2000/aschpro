@@ -1,20 +1,15 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styles from "../../styles/home.module.css";
-import Image from 'next/image';
+import Image from "next/image";
 import Button from "../../components/button";
 import doubleArrow from "../../../public/images/double-arrow.png";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
-const Card = ({
-  title,
-  short_desc,
-  blog_image,
-  url,
-}) => {
+const Card = ({ title, short_desc, blog_image, url }) => {
   return (
     <motion.div
       className={styles.blueBox}
@@ -33,7 +28,10 @@ const Card = ({
       <div className={styles.align2}>
         <h4 className={styles.headingCustom}>{title}</h4>
         <div className={styles.head_description}>
-          <p>{short_desc?.substring(0, 150)}{short_desc?.length > 150 ? "..." : ""}</p>
+          <p>
+            {short_desc?.substring(0, 150)}
+            {short_desc?.length > 150 ? "..." : ""}
+          </p>
         </div>
         <Link href={`/blogs/${url}`} style={{ textDecoration: "none" }}>
           <p className={`${styles.head_description} ${styles.read_more}`}>
@@ -75,7 +73,9 @@ const Resource = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api.aschpro.com/api/blogs/get-all-blog");
+        const response = await fetch(
+          "https://api.aschpro.com/api/blogs/get-all-blog"
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -141,11 +141,13 @@ const Resource = () => {
                 delay: index * 0.2,
               }}
             >
-              <Card title={card.title}
+              <Card
+                title={card.title}
                 createdAt={card.createdAt}
                 blog_image={card.blog_image}
                 short_desc={card.short_desc}
-                url={card._id} />
+                url={card._id}
+              />
             </motion.div>
           ))}
         </div>
