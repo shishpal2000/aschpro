@@ -246,6 +246,52 @@
   margin-top: 0.1rem !important;
 } */
 
+/* Dropdown Trigger Styles */
+.service-dropdown-trigger {
+  background-color: transparent;
+  border: none;
+  color: inherit; /* Inherit text color from parent */
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.service-dropdown-trigger:hover {
+  color: #264653; /* Change color on hover */
+}
+
+/* Dropdown Menu Styles */
+.service-dropdown-menu {
+  position: absolute;
+  background-color: white;
+  color: black;
+  padding: 10px 0;
+  display: none;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  z-index: 999;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-dropdown-menu li {
+  list-style: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.service-dropdown-menu li:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Background color on hover */
+}
+
+/* Show dropdown menu on hover */
+.service-dropdown:hover .service-dropdown-menu {
+  display: block;
+}
+
+
 @media (max-width: 767px) {
   .listStyle {
     flex-direction: column;
@@ -294,20 +340,3 @@
     font-size: 20px;
   }
 }
-
-/* <Link href="/services" className={`${styles.link}`}>
-<li className={scrolled ? "text-dark dropdown-toggle" : "text-white dropdown-toggle"}>Service </li>
-</Link>
-
-<ul className={`dropdown-menu ${styles.marginTop}`} aria-labelledby="dropdownMenuButton1">
-  <li>
-    <a className="dropdown-item" onClick={() => handleLinkClick("/services")}>Service</a>
-  </li>
-  <li>
-    <a className="dropdown-item" onClick={() => handleLinkClick("/contract-staffing")}>Contract Staffing</a>
-  </li>
-  <li>
-    <a className="dropdown-item" onClick={() => handleLinkClick("/permanent-staffing")}>Permanent Staffing</a>
-  </li>
-
-</ul> */

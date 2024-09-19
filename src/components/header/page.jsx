@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import Button from "../../components/button";
 import Image from "next/image";
+// import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
+
 
 const Header = () => {
   const router = useRouter();
@@ -36,20 +38,6 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Dynamically import bootstrap's JS
-    import("bootstrap/dist/js/bootstrap.bundle.min")
-      .then((bootstrap) => {
-        // Initialize all dropdowns
-        const dropdownElements = [].slice.call(
-          document.querySelectorAll(".dropdown-toggle")
-        );
-        dropdownElements.map(
-          (dropdownElement) => new bootstrap.Dropdown(dropdownElement)
-        );
-      })
-      .catch((error) => console.error("Error loading Bootstrap JS:", error));
-  }, [router.asPath]); // Reinitialize on route change
 
   const handleLinkClick = (url) => {
     router.push(url);
@@ -302,7 +290,7 @@ const Header = () => {
                     ? "text-white dropdown-toggle"
                     : "text-white dropdown-toggle"
                 }
-                onClick={() => handleLinkClick("/services")}
+                onClick={() => router.push("/services")}
               >
                 Service
               </li>
