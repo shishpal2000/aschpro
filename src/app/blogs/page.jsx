@@ -7,8 +7,9 @@ import Resource from "../../components/blogListing/Resource";
 // import Resourses from "../../components/blogListing/Resource"
 
 export const metadata = {
-  title: "Latest Blogs - Articles ,Guides,Interviews,Recent",
-  description : "Discover the latest trends and insights in recruitment services on our blog. Stay updated with expert advice and industry news to enhance your hiring process."
+  title: "Blogs - Aschpro",
+  description:
+    "Discover insightful blogs on trends, tips, & more. Boost your knowledge with our expertly crafted articles on hiring. Read now for the latest updates!",
 };
 
 const page = () => {
@@ -16,7 +17,7 @@ const page = () => {
     <div>
       <BlogSection />
       <BlogData />
-      <Resource/>
+      <Resource />
       {/* <BlogQNS /> */}
     </div>
   );

@@ -11,14 +11,14 @@ const BlogDetail = () => {
 
   useEffect(() => {
     if (pathName) {
-      const slug = pathName.split("/").pop(); // Extract the slug from the pathname
+      const slug = pathName.split("/").pop();
 
       fetch(`https://api.aschpro.com/api/blogs/get-blog/${slug}`)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           setBlogData(data?.data);
         })
-        .catch(error => console.error('Error fetching blog data:', error));
+        .catch((error) => console.error("Error fetching blog data:", error));
     }
   }, [pathName]);
 
@@ -41,7 +41,7 @@ const BlogDetail = () => {
 
             <div className={styles.fontSize}>
               <h1>{blogData.title}</h1>
-              <br/>
+              <br />
               <p dangerouslySetInnerHTML={{ __html: blogData?.content }}></p>
             </div>
           </div>
